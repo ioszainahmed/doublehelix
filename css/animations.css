@@ -1,0 +1,126 @@
+/*
+ * Animation Keyframes
+ * Single Responsibility: Defines all animation keyframes used throughout the application
+ */
+
+/* Content Fade In Animation */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+    }
+}
+
+/* Column Clip Reveal Animation */
+@keyframes columnReveal {
+    0% {
+        clip-path: inset(0 0 100% 0);
+        opacity: 0;
+    }
+    100% {
+        clip-path: inset(0 0 0% 0);
+        opacity: 1;
+    }
+}
+
+/* Border Spin Animation for Shiny CTA */
+@keyframes border-spin {
+    to {
+        --gradient-angle: 360deg;
+    }
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Breathe Animation */
+@keyframes breathe {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.20);
+    }
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blink Caret Animation */
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Infinite Scroll Animation */
+@keyframes infinite-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Beam Spin Animation */
+@keyframes beam-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dots Move Animation */
+@keyframes dots-move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 24px 24px;
+    }
+}
+
+/* Carousel Animation */
+@keyframes carousel {
+    0%, 100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    5%, 30% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    35%, 100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}

@@ -1,0 +1,12 @@
+/*
+ * Main Styles
+ * Single Responsibility: Base styles and font definitions
+ */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.font-geist {
+    font-family: 'Geist', sans-serif !important;
+}
