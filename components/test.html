@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Carousel Component Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Infinite Scroll Animation */
+        @keyframes infinite-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-infinite-scroll {
+            animation: infinite-scroll 40s linear infinite;
+        }
+
+        .group:hover .animate-infinite-scroll {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-black text-white p-8">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold mb-8">Logo Carousel Component Test</h1>
+        
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Component Architecture</h2>
+            <div class="bg-gray-900 p-6 rounded-lg">
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                    <li><strong>LogoImage.js</strong> - Renders logo images (Single Responsibility)</li>
+                    <li><strong>LogoLabel.js</strong> - Renders text labels (Single Responsibility)</li>
+                    <li><strong>LogoItem.js</strong> - Combines image + label (Interface Segregation)</li>
+                    <li><strong>LogoData.js</strong> - Stores logo configuration (Liskov Substitution)</li>
+                    <li><strong>InfiniteLogoCarousel.js</strong> - Orchestrates carousel (Dependency Inversion)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Live Carousel Demo</h2>
+            <div class="bg-gray-900 p-6 rounded-lg">
+                <div id="logo-carousel-container"></div>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Component Status</h2>
+            <div class="bg-gray-900 p-6 rounded-lg">
+                <div id="status" class="space-y-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Components in Dependency Order -->
+    <script src="LogoImage.js"></script>
+    <script src="LogoLabel.js"></script>
+    <script src="LogoItem.js"></script>
+    <script src="LogoData.js"></script>
+    <script src="InfiniteLogoCarousel.js"></script>
+
+    <!-- Test and Initialize -->
+    <script>
+        (function() {
+            'use strict';
+            
+            const statusDiv = document.getElementById('status');
+            
+            function logStatus(message, isSuccess = true) {
+                const statusItem = document.createElement('div');
+                statusItem.className = `flex items-center gap-2 ${isSuccess ? 'text-green-400' : 'text-red-400'}`;
+                statusItem.innerHTML = `
+                    <span class="text-2xl">${isSuccess ? '✓' : '✗'}</span>
+                    <span>${message}</span>
+                `;
+                statusDiv.appendChild(statusItem);
+            }
+
+            try {
+                // Test LogoImage component
+                const testImage = new LogoImage('test.png', 'Test', 'test-class');
+                if (testImage && testImage.render) {
+                    logStatus('LogoImage component loaded successfully');
+                } else {
+                    throw new Error('LogoImage missing render method');
+                }
+
+                // Test LogoLabel component
+                const testLabel = new LogoLabel('Test Label', 'test-class');
+                if (testLabel && testLabel.render) {
+                    logStatus('LogoLabel component loaded successfully');
+                } else {
+                    throw new Error('LogoLabel missing render method');
+                }
+
+                // Test LogoItem component
+                const testItem = new LogoItem(testImage, testLabel);
+                if (testItem && testItem.render) {
+                    logStatus('LogoItem component loaded successfully');
+                } else {
+                    throw new Error('LogoItem missing render method');
+                }
+
+                // Test LogoData
+                if (typeof LOGO_DATA !== 'undefined' && Array.isArray(LOGO_DATA)) {
+                    logStatus(`LogoData loaded with ${LOGO_DATA.length} logos`);
+                } else {
+                    throw new Error('LOGO_DATA not defined or not an array');
+                }
+
+                // Test InfiniteLogoCarousel component
+                const carousel = new InfiniteLogoCarousel('logo-carousel-container', LOGO_DATA);
+                if (carousel && carousel.init) {
+                    logStatus('InfiniteLogoCarousel component loaded successfully');
+                    
+                    // Initialize the carousel
+                    carousel.init();
+                    logStatus('Carousel initialized and rendered successfully');
+                    
+                    // Verify DOM rendering
+                    const container = document.getElementById('logo-carousel-container');
+                    if (container && container.children.length > 0) {
+                        logStatus('Carousel rendered to DOM successfully');
+                    } else {
+                        throw new Error('Carousel did not render to DOM');
+                    }
+                } else {
+                    throw new Error('InfiniteLogoCarousel missing init method');
+                }
+
+                logStatus('🎉 All components working correctly!', true);
+
+            } catch (error) {
+                logStatus(`Error: ${error.message}`, false);
+                console.error('Component test failed:', error);
+            }
+        })();
+    </script>
+</body>
+</html>
+

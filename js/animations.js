@@ -46,3 +46,4 @@
     // Export for external use
     window.initInViewAnimations = initInViewAnimations;
 })();
+
