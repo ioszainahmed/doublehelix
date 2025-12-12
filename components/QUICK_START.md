@@ -288,3 +288,5 @@ Your carousel is ready to use! The components are:
 
 Happy coding! 🎨✨
 
+
+
