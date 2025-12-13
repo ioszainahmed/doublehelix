@@ -1,0 +1,460 @@
+/*
+ * Debug Styles - Color-Coded Borders for Sections & Components
+ * Toggle with the debug button in the footer
+ */
+
+/* ============================================
+   DEBUG MODE TOGGLE
+   ============================================ */
+
+/* Hide all debug styles by default - only show when debug-mode is active */
+.debug-header,
+.debug-hero,
+.debug-features,
+.debug-mobile-suite,
+.debug-testimonials,
+.debug-contact,
+.debug-footer,
+.debug-background,
+.debug-feature-card,
+.debug-api-status,
+.debug-phone-mockup,
+.debug-stats-card,
+.debug-testimonial-card,
+.debug-carousel-card,
+.debug-form,
+.debug-nav,
+.debug-logo-carousel,
+.debug-cta {
+    outline: none !important;
+}
+
+.debug-header::after,
+.debug-hero::before,
+.debug-features::before,
+.debug-mobile-suite::before,
+.debug-testimonials::before,
+.debug-contact::before,
+.debug-footer::before,
+.debug-feature-card::before,
+.debug-api-status::before,
+.debug-phone-mockup::before,
+.debug-stats-card::before,
+.debug-form::before,
+.debug-logo-carousel::before {
+    display: none !important;
+}
+
+.debug-legend {
+    display: none !important;
+}
+
+/* ============================================
+   DEBUG MODE ACTIVE STATE
+   ============================================ */
+
+/* Show debug legend when active */
+body.debug-mode-active .debug-legend {
+    display: block !important;
+}
+
+/* ============================================
+   SECTION BORDERS (when debug mode is active)
+   ============================================ */
+
+/* Header - Red */
+body.debug-mode-active .debug-header {
+    outline: 3px solid #ef4444 !important;
+    outline-offset: -3px;
+}
+body.debug-mode-active .debug-header::after {
+    content: 'HEADER';
+    display: block !important;
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    background: #ef4444;
+    color: white;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 4px;
+}
+
+/* Hero - Blue */
+body.debug-mode-active .debug-hero {
+    outline: 3px solid #3b82f6 !important;
+    outline-offset: -3px;
+}
+body.debug-mode-active .debug-hero::before {
+    content: 'HERO';
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #3b82f6;
+    color: white;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 4px;
+}
+
+/* Features - Green */
+body.debug-mode-active .debug-features {
+    outline: 3px solid #22c55e !important;
+    outline-offset: -3px;
+}
+body.debug-mode-active .debug-features::before {
+    content: 'FEATURES';
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #22c55e;
+    color: white;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 4px;
+}
+
+/* Mobile Suite - Purple */
+body.debug-mode-active .debug-mobile-suite {
+    outline: 3px solid #a855f7 !important;
+    outline-offset: -3px;
+}
+body.debug-mode-active .debug-mobile-suite::before {
+    content: 'MOBILE SUITE';
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #a855f7;
+    color: white;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 4px;
+}
+
+/* Testimonials - Yellow */
+body.debug-mode-active .debug-testimonials {
+    outline: 3px solid #eab308 !important;
+    outline-offset: -3px;
+}
+body.debug-mode-active .debug-testimonials::before {
+    content: 'TESTIMONIALS';
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #eab308;
+    color: black;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 4px;
+}
+
+/* Contact - Pink */
+body.debug-mode-active .debug-contact {
+    outline: 3px solid #ec4899 !important;
+    outline-offset: -3px;
+}
+body.debug-mode-active .debug-contact::before {
+    content: 'CONTACT';
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ec4899;
+    color: white;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 4px;
+}
+
+/* Footer - Cyan */
+body.debug-mode-active .debug-footer {
+    outline: 3px solid #06b6d4 !important;
+    outline-offset: -3px;
+}
+body.debug-mode-active .debug-footer::before {
+    content: 'FOOTER';
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #06b6d4;
+    color: white;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 4px;
+}
+
+/* Background - Orange Dashed */
+body.debug-mode-active .debug-background {
+    outline: 3px dashed #f97316 !important;
+    outline-offset: -3px;
+}
+
+/* ============================================
+   COMPONENT BORDERS (when debug mode is active)
+   ============================================ */
+
+/* Feature Cards - Lime */
+body.debug-mode-active .debug-feature-card {
+    outline: 2px solid #84cc16 !important;
+    outline-offset: -2px;
+}
+body.debug-mode-active .debug-feature-card::before {
+    content: 'FEATURE CARD';
+    display: block !important;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #84cc16;
+    color: black;
+    padding: 2px 6px;
+    font-size: 8px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 3px;
+}
+
+/* API Status Card - Indigo */
+body.debug-mode-active .debug-api-status {
+    outline: 2px solid #6366f1 !important;
+    outline-offset: -2px;
+}
+body.debug-mode-active .debug-api-status::before {
+    content: 'API STATUS';
+    display: block !important;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #6366f1;
+    color: white;
+    padding: 2px 6px;
+    font-size: 8px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 3px;
+}
+
+/* Phone Mockup - Rose */
+body.debug-mode-active .debug-phone-mockup {
+    outline: 2px solid #f43f5e !important;
+    outline-offset: -2px;
+}
+body.debug-mode-active .debug-phone-mockup::before {
+    content: 'PHONE';
+    display: block !important;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: #f43f5e;
+    color: white;
+    padding: 2px 6px;
+    font-size: 8px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 3px;
+}
+
+/* Stats Card - Amber */
+body.debug-mode-active .debug-stats-card {
+    outline: 2px solid #f59e0b !important;
+    outline-offset: -2px;
+}
+body.debug-mode-active .debug-stats-card::before {
+    content: 'STATS';
+    display: block !important;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #f59e0b;
+    color: black;
+    padding: 2px 6px;
+    font-size: 8px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 3px;
+}
+
+/* Testimonial Cards - Teal */
+body.debug-mode-active .debug-testimonial-card {
+    outline: 2px solid #14b8a6 !important;
+    outline-offset: -2px;
+}
+
+/* Carousel Cards - Violet */
+body.debug-mode-active .debug-carousel-card {
+    outline: 2px solid #8b5cf6 !important;
+    outline-offset: -2px;
+}
+
+/* Form - Sky */
+body.debug-mode-active .debug-form {
+    outline: 2px solid #0ea5e9 !important;
+    outline-offset: -2px;
+}
+body.debug-mode-active .debug-form::before {
+    content: 'FORM';
+    display: block !important;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    background: #0ea5e9;
+    color: white;
+    padding: 2px 6px;
+    font-size: 8px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 3px;
+}
+
+/* Navigation - Red Light */
+body.debug-mode-active .debug-nav {
+    outline: 2px solid #fca5a5 !important;
+    outline-offset: -2px;
+}
+
+/* Logo Carousel - Emerald */
+body.debug-mode-active .debug-logo-carousel {
+    outline: 2px solid #10b981 !important;
+    outline-offset: -2px;
+}
+body.debug-mode-active .debug-logo-carousel::before {
+    content: 'LOGO CAROUSEL';
+    display: block !important;
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    background: #10b981;
+    color: white;
+    padding: 2px 6px;
+    font-size: 8px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 3px;
+}
+
+/* CTA Button - Orange */
+body.debug-mode-active .debug-cta {
+    outline: 2px solid #fb923c !important;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   DEBUG LEGEND (Fixed Position)
+   ============================================ */
+.debug-legend {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    z-index: 99999;
+    font-family: monospace;
+    font-size: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.debug-legend h4 {
+    color: white;
+    margin: 0 0 8px 0;
+    font-size: 11px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 6px;
+}
+
+.debug-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.debug-legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   DEBUG TOGGLE BUTTON
+   ============================================ */
+
+.debug-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 600;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #a1a1aa;
+}
+
+.debug-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.debug-toggle-btn .debug-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #71717a;
+    transition: all 0.2s ease;
+}
+
+/* Active state for button */
+body.debug-mode-active .debug-toggle-btn {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.3);
+    color: #22c55e;
+}
+
+body.debug-mode-active .debug-toggle-btn .debug-indicator {
+    background: #22c55e;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+}
+

@@ -44,7 +44,7 @@ class Features extends Component {
         const { mainFeature } = this.props;
         
         return `
-            <div class="group overflow-hidden bg-gradient-to-br from-white/10 to-white/0 z-10 rounded-[2.5rem] mb-6 relative backdrop-blur-lg" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)); --border-radius-before: 2.5rem">
+            <div class="debug-feature-card group overflow-hidden bg-gradient-to-br from-white/10 to-white/0 z-10 rounded-[2.5rem] mb-6 relative backdrop-blur-lg" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)); --border-radius-before: 2.5rem">
                 <!-- Background Glow Effect -->
                 <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent opacity-40 pointer-events-none"></div>
                 
@@ -68,7 +68,7 @@ class Features extends Component {
                     </div>
 
                     <!-- API Status Visual -->
-                    <div id="api-status-card"></div>
+                    <div id="api-status-card" class="debug-api-status relative"></div>
                 </div>
             </div>
         `;
@@ -78,7 +78,7 @@ class Features extends Component {
         const { cards } = this.props;
         
         return cards.map(card => `
-            <div class="group overflow-hidden flex flex-col hover:border-white/20 transition-colors duration-500 bg-gradient-to-br from-white/5 to-white/0 rounded-[2rem] backdrop-blur-lg" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)); --border-radius-before: 2rem">
+            <div class="debug-feature-card group overflow-hidden flex flex-col hover:border-white/20 transition-colors duration-500 bg-gradient-to-br from-white/5 to-white/0 rounded-[2rem] backdrop-blur-lg" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)); --border-radius-before: 2rem">
                 <!-- Visual Header with floating widgets -->
                 <div class="flex overflow-hidden bg-gradient-to-b from-white/[0.03] to-transparent h-64 relative items-center justify-center" style="mask-image: linear-gradient(180deg, transparent, black 0%, black 90%, transparent);">
                     <div class="overflow-hidden bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.07] via-transparent to-transparent opacity-50 absolute inset-0">
@@ -152,7 +152,7 @@ class Features extends Component {
 
     render() {
         return `
-            <section class="z-20 w-full max-w-7xl mt-12 mr-auto mb-24 ml-auto pt-10 pr-2 pb-32 pl-2 relative">
+            <section class="debug-features z-20 w-full max-w-7xl mt-12 mr-auto mb-24 ml-auto pt-10 pr-2 pb-32 pl-2 relative">
                 ${this._renderMainFeatureCard()}
                 
                 <!-- Bottom Grid Cards -->
@@ -178,4 +178,5 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     window.Features = Features;
 }
+
 

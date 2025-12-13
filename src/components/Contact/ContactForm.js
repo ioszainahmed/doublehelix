@@ -84,7 +84,7 @@ class ContactForm extends Component {
         const fullFields = fields.filter(f => !f.half);
 
         return `
-            <section class="w-full max-w-7xl mx-auto px-6 mb-32 relative z-20 mt-32">
+            <section class="debug-contact w-full max-w-7xl mx-auto px-6 mb-32 relative z-20 mt-32">
                 <div class="grid lg:grid-cols-12 gap-16 items-start">
                     <!-- CTA Text Side -->
                     <div class="lg:col-span-5 pt-4">
@@ -98,7 +98,7 @@ class ContactForm extends Component {
                     
                     <!-- Form Side -->
                     <div class="lg:col-span-7">
-                        <form class="space-y-12" id="contact-form">
+                        <form class="debug-form space-y-12 relative" id="contact-form">
                             ${halfFields.length > 0 ? `
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                                     ${halfFields.map(f => this._renderField(f)).join('')}
@@ -154,4 +154,5 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     window.ContactForm = ContactForm;
 }
+
 

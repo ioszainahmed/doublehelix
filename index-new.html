@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/utilities.css">
-    <link rel="stylesheet" href="css/debug.css">
     
     <!-- ================================================
          Tailwind Configuration
@@ -137,57 +136,7 @@
     <!-- App Orchestrator (Auto-initializes) -->
     <script src="src/App.js"></script>
 
-    <!-- Debug Mode Toggle Script -->
-    <script>
-        // Debug mode toggle function
-        window.toggleDebugMode = function() {
-            document.body.classList.toggle('debug-mode-active');
-            
-            // Save preference to localStorage
-            const isActive = document.body.classList.contains('debug-mode-active');
-            localStorage.setItem('debugMode', isActive ? 'active' : 'inactive');
-        };
-        
-        // Restore debug mode state from localStorage on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedState = localStorage.getItem('debugMode');
-            if (savedState === 'active') {
-                document.body.classList.add('debug-mode-active');
-            }
-        });
-        
-        // Keyboard shortcut: Ctrl/Cmd + Shift + D to toggle debug mode
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'D') {
-                e.preventDefault();
-                window.toggleDebugMode();
-            }
-        });
-    </script>
-
-    <!-- Debug Legend -->
-    <div class="debug-legend">
-        <h4>🎨 DEBUG BORDERS</h4>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#ef4444"></span> Header</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#3b82f6"></span> Hero</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#22c55e"></span> Features</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#a855f7"></span> Mobile Suite</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#eab308"></span> Testimonials</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#ec4899"></span> Contact</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#06b6d4"></span> Footer</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#f97316; border:1px dashed #fff"></span> Background</div>
-        <hr style="border-color:rgba(255,255,255,0.2); margin:8px 0">
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#84cc16"></span> Feature Card</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#6366f1"></span> API Status</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#f43f5e"></span> Phone Mockup</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#f59e0b"></span> Stats Card</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#14b8a6"></span> Testimonial Card</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#8b5cf6"></span> Carousel Card</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#0ea5e9"></span> Form</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#10b981"></span> Logo Carousel</div>
-        <div class="debug-legend-item"><span class="debug-legend-color" style="background:#fb923c"></span> CTA Button</div>
-    </div>
-
 </body>
 </html>
+
 

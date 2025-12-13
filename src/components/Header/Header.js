@@ -93,8 +93,8 @@ class Header extends Component {
             </div>
 
             <!-- Navigation -->
-            <div class="fixed flex w-full z-50 pt-6 pr-4 pl-4 top-0 left-0 justify-center">
-                <nav class="shadow-black/50 flex md:gap-12 md:w-auto bg-black/60 w-full max-w-5xl rounded-full pt-2 pr-2 pb-2 pl-6 shadow-2xl backdrop-blur-xl gap-x-8 gap-y-8 items-center justify-between" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)); --border-radius-before: 9999px">
+            <div class="debug-header fixed flex w-full z-50 pt-6 pr-4 pl-4 top-0 left-0 justify-center">
+                <nav class="debug-nav shadow-black/50 flex md:gap-12 md:w-auto bg-black/60 w-full max-w-5xl rounded-full pt-2 pr-2 pb-2 pl-6 shadow-2xl backdrop-blur-xl gap-x-8 gap-y-8 items-center justify-between" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)); --border-radius-before: 9999px">
                     <!-- Brand -->
                     <div class="flex items-center gap-2 shrink-0">
                         <span class="text-base font-medium tracking-tight text-white font-sans">${brandName}</span>
@@ -147,4 +147,5 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     window.Header = Header;
 }
+
 

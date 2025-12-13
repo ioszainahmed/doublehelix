@@ -25,7 +25,7 @@ class Background extends Component {
 
         return `
             <!-- Animated Background -->
-            <div class="aura-background-component fixed top-0 w-full h-screen mix-blend-screen brightness-50 opacity-50 saturate-0 z-10 pointer-events-none" data-alpha-mask="${alphaMask}" style="mask-image: linear-gradient(to bottom, transparent, black 0%, black ${alphaMask}%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black ${alphaMask}%, transparent)">
+            <div class="debug-background aura-background-component fixed top-0 w-full h-screen mix-blend-screen brightness-50 opacity-50 saturate-0 z-10 pointer-events-none" data-alpha-mask="${alphaMask}" style="mask-image: linear-gradient(to bottom, transparent, black 0%, black ${alphaMask}%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black ${alphaMask}%, transparent)">
                 ${enableUnicorn ? `
                     <div class="aura-background-component top-0 w-full -z-10 absolute h-full">
                         <div data-us-project="${unicornProjectId}" class="absolute w-full h-full left-0 top-0 -z-10"></div>
@@ -58,4 +58,5 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     window.Background = Background;
 }
+
 

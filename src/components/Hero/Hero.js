@@ -116,7 +116,7 @@ class Hero extends Component {
      */
     _renderCTA() {
         return `
-            <button class="group flex overflow-hidden uppercase transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_40px_-10px_rgba(234,88,12,0.5)] focus:outline-none text-sm font-medium text-white tracking-widest font-geist rounded-full pt-5 pr-12 pb-5 pl-12 relative items-center justify-center">
+            <button class="debug-cta group flex overflow-hidden uppercase transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_40px_-10px_rgba(234,88,12,0.5)] focus:outline-none text-sm font-medium text-white tracking-widest font-geist rounded-full pt-5 pr-12 pb-5 pl-12 relative items-center justify-center">
                 <!-- Full Border Beam -->
                 <div class="absolute inset-0 -z-20 rounded-full overflow-hidden p-[1px]">
                     <div class="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0_300deg,#ea580c_360deg)]" style="animation: beam-spin 3s linear infinite;"></div>
@@ -144,7 +144,7 @@ class Hero extends Component {
         const { subtitle, trustedByText } = this.props;
 
         return `
-            <section class="min-h-screen flex flex-col md:pt-20 overflow-hidden w-full pt-32 relative items-center justify-center" style="mask-image: linear-gradient(180deg, transparent, black 0%, black 95%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, black 0%, black 95%, transparent);">
+            <section class="debug-hero min-h-screen flex flex-col md:pt-20 overflow-hidden w-full pt-32 relative items-center justify-center" style="mask-image: linear-gradient(180deg, transparent, black 0%, black 95%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, black 0%, black 95%, transparent);">
                 
                 <!-- Background Effects -->
                 <div class="absolute inset-0 -z-20">
@@ -179,7 +179,7 @@ class Hero extends Component {
                 </div>
 
                 <!-- Content Container -->
-                <div class="text-center max-w-5xl z-10 mt-24 mr-auto mb-24 ml-auto pr-6 pl-6 relative">
+                <div class="text-center max-w-5xl z-10 mt-12 mr-auto mb-8 ml-auto pr-6 pl-6 relative">
                     
                     ${this._renderHeadline()}
 
@@ -200,7 +200,7 @@ class Hero extends Component {
                 </div>
 
                 <!-- Logo Carousel Container -->
-                <div class="[animation:fadeSlideIn_1s_ease-out_1.8s_both] animate-on-scroll relative z-20 w-full max-w-6xl mx-auto px-6 pb-8 md:pb-12 animate">
+                <div class="debug-logo-carousel [animation:fadeSlideIn_1s_ease-out_1.8s_both] animate-on-scroll relative z-20 w-full max-w-6xl mx-auto px-6 pb-8 md:pb-12 animate">
                     <div id="logo-carousel-container"></div>
                 </div>
             </section>
@@ -214,4 +214,5 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     window.Hero = Hero;
 }
+
 

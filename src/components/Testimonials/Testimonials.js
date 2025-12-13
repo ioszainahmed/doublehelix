@@ -99,7 +99,7 @@ class Testimonials extends Component {
         const colorClass = colorMap[item.statColor] || colorMap.orange;
         
         return `
-            <div class="carousel-card group flex flex-col hover:bg-zinc-900/60 transition-all duration-500 bg-zinc-900/40 rounded-[2.5rem] pt-10 pr-10 pb-10 pl-10 relative backdrop-blur-sm justify-between animate-carousel" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)); --border-radius-before: 2.5rem; animation-delay: ${delay}s; opacity: 0;">
+            <div class="debug-carousel-card carousel-card group flex flex-col hover:bg-zinc-900/60 transition-all duration-500 bg-zinc-900/40 rounded-[2.5rem] pt-10 pr-10 pb-10 pl-10 relative backdrop-blur-sm justify-between animate-carousel" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)); --border-radius-before: 2.5rem; animation-delay: ${delay}s; opacity: 0;">
                 <div class="group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-${item.statColor}-500/5 via-transparent to-transparent opacity-0 rounded-[2.5rem] absolute inset-0"></div>
 
                 <div class="relative z-10">
@@ -176,7 +176,7 @@ class Testimonials extends Component {
         const { carouselItems, gridCards } = this.props;
 
         return `
-            <section class="w-full max-w-7xl z-20 mt-0 mr-auto mb-32 ml-auto pt-6 pr-6 pb-6 pl-6 relative">
+            <section class="debug-testimonials w-full max-w-7xl z-20 mt-0 mr-auto mb-32 ml-auto pt-6 pr-6 pb-6 pl-6 relative">
                 ${this._renderHeader()}
                 ${this._renderCarouselStyles()}
 
@@ -186,7 +186,7 @@ class Testimonials extends Component {
                     <!-- Left Column: Grid Cards -->
                     <div class="lg:col-span-7 flex flex-col gap-6">
                         <!-- Top Wide Card -->
-                        <div class="group hover:bg-zinc-900/60 transition-all duration-500 bg-zinc-900/40 rounded-[2.5rem] pt-10 pr-10 pb-10 pl-10 relative backdrop-blur-sm" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)); --border-radius-before: 2.5rem">
+                        <div class="debug-testimonial-card group hover:bg-zinc-900/60 transition-all duration-500 bg-zinc-900/40 rounded-[2.5rem] pt-10 pr-10 pb-10 pl-10 relative backdrop-blur-sm" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)); --border-radius-before: 2.5rem">
                             <div class="group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-bl from-blue-500/5 via-transparent to-transparent opacity-0 rounded-[2.5rem] absolute inset-0"></div>
 
                             <div class="relative z-10">
@@ -268,4 +268,5 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     window.Testimonials = Testimonials;
 }
+
 

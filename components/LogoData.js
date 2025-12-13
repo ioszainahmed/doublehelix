@@ -21,9 +21,9 @@ const LOGO_DATA = [
         label: 'Lakhani'
     },
     {
-        src: 'assets/logos/marriott.png',
-        alt: 'Tres Amigas',
-        label: 'Tres Amigas'
+        src: 'assets/logos/tacomex.png',
+        alt: 'Tacomex',
+        label: 'Tacomex'
     },
     {
         src: 'assets/logos/brickforce.png',
@@ -36,16 +36,17 @@ const LOGO_DATA = [
         label: 'WanaSell'
     },
     {
-        src: 'assets/logos/marriott.png',
+        src: 'assets/logos/fowrun.png',
         alt: 'Fowrun',
         label: 'Fowrun'
     },
     {
-        src: 'assets/logos/marriott.png',
+        src: 'assets/logos/quickpantri.png',
         alt: 'QuickPantri',
         label: 'QuickPantri'
     }
 ];
+
 
 
 

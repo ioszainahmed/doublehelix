@@ -108,6 +108,15 @@ class Footer extends Component {
         `;
     }
 
+    _renderDebugToggle() {
+        return `
+            <button id="debug-toggle-btn" class="debug-toggle-btn" onclick="window.toggleDebugMode()">
+                <span class="debug-indicator"></span>
+                Debug
+            </button>
+        `;
+    }
+
     _renderBackToTop() {
         return `
             <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="group flex items-center gap-3 text-xs text-zinc-500 hover:text-white transition-colors font-sans uppercase tracking-wider">
@@ -126,7 +135,7 @@ class Footer extends Component {
         const { brand, linkColumns, copyright } = this.props;
 
         return `
-            <footer class="relative w-full bg-zinc-900/30 pt-24 pb-8 border-t border-white/5 backdrop-blur-sm z-20">
+            <footer class="debug-footer relative w-full bg-zinc-900/30 pt-24 pb-8 border-t border-white/5 backdrop-blur-sm z-20">
                 <div class="w-full max-w-7xl mx-auto px-6">
                     <div class="grid lg:grid-cols-12 gap-16 mb-24">
                         <!-- Brand Column -->
@@ -153,8 +162,9 @@ class Footer extends Component {
                     <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
                         <p class="text-xs text-zinc-500 font-sans">${copyright}</p>
                         
-                        <div class="flex items-center gap-10">
+                        <div class="flex items-center gap-6 md:gap-10">
                             <a href="#" class="text-xs text-zinc-500 hover:text-white transition-colors font-sans">Terms of Service</a>
+                            ${this._renderDebugToggle()}
                             ${this._renderBackToTop()}
                         </div>
                     </div>
@@ -170,4 +180,5 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     window.Footer = Footer;
 }
+
 

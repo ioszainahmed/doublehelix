@@ -48,8 +48,8 @@ class InfiniteLogoCarousel {
         const duplicatedItemsHTML = this.renderItems(logoItems);
 
         return `
-            <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] opacity-70 grayscale hover:grayscale-0 transition-all duration-700 group">
-                <div class="flex items-center justify-center md:justify-start [&_img]:mx-8 w-max animate-infinite-scroll">
+            <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group">
+                <div class="flex items-center justify-center md:justify-start gap-[10px] w-max animate-infinite-scroll">
                     <!-- Original Items -->
                     ${itemsHTML}
                     
