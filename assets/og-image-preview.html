@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Preview - DoubleHelix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            font-family: 'Manrope', system-ui, sans-serif;
+        }
+        
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .preview-container {
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .og-image {
+            width: 1200px;
+            height: 630px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
+        }
+        
+        /* Grid pattern */
+        .og-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        
+        /* Top ambient glow */
+        .ambient-glow {
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1600px;
+            height: 600px;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        /* Orange glow */
+        .orange-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(ellipse at center, rgba(234,88,12,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        /* Corner accents */
+        .corner {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+        }
+        .corner::before, .corner::after {
+            content: '';
+            position: absolute;
+            background: rgba(234,88,12,0.4);
+        }
+        .corner::before {
+            width: 2px;
+            height: 50px;
+        }
+        .corner::after {
+            width: 50px;
+            height: 2px;
+        }
+        .corner.tl { top: 30px; left: 30px; }
+        .corner.tr { top: 30px; right: 30px; }
+        .corner.tr::before { right: 0; }
+        .corner.tr::after { right: 0; }
+        .corner.bl { bottom: 30px; left: 30px; }
+        .corner.bl::before { bottom: 0; }
+        .corner.bl::after { bottom: 0; }
+        .corner.br { bottom: 30px; right: 30px; }
+        .corner.br::before { right: 0; bottom: 0; }
+        .corner.br::after { right: 0; bottom: 0; }
+        
+        /* Decorative lines */
+        .line {
+            position: absolute;
+            height: 1px;
+            background: rgba(234,88,12,0.2);
+        }
+        .line.top-left { top: 100px; left: 0; width: 300px; }
+        .line.top-right { top: 100px; right: 0; width: 300px; }
+        .line.bottom-left { bottom: 100px; left: 0; width: 400px; }
+        .line.bottom-right { bottom: 100px; right: 0; width: 400px; }
+        
+        /* Content container */
+        .content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+        }
+        
+        /* Company name */
+        .company-name {
+            font-size: 86px;
+            font-weight: 700;
+            letter-spacing: -3px;
+            background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.5) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        /* Tagline */
+        .tagline {
+            font-size: 28px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.5px;
+            margin-bottom: 40px;
+        }
+        
+        /* Accent bar */
+        .accent-bar {
+            width: 300px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            border-radius: 2px;
+        }
+        
+        /* Side dots */
+        .dots {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 30px;
+        }
+        .dots.left { left: 150px; }
+        .dots.right { right: 150px; }
+        .dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(234,88,12,0.5);
+        }
+        .dot:nth-child(2) { opacity: 0.6; }
+        .dot:nth-child(3) { opacity: 0.4; }
+        
+        /* Instructions */
+        .instructions {
+            margin-top: 30px;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            font-size: 14px;
+        }
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Social Sharing Thumbnail Preview</h1>
+    
+    <div class="preview-container">
+        <div class="og-image" id="og-image">
+            <!-- Glows -->
+            <div class="ambient-glow"></div>
+            <div class="orange-glow"></div>
+            
+            <!-- Corner accents -->
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
+            
+            <!-- Decorative lines -->
+            <div class="line top-left"></div>
+            <div class="line top-right"></div>
+            <div class="line bottom-left"></div>
+            <div class="line bottom-right"></div>
+            
+            <!-- Side dots -->
+            <div class="dots left">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="dots right">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            
+            <!-- Content -->
+            <div class="content">
+                <div class="company-name">DoubleHelix</div>
+                <div class="tagline">Scale your app with smart infrastructure</div>
+                <div class="accent-bar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <p>To export as PNG:</p>
+        <p>1. Open DevTools → <code>Cmd/Ctrl + Shift + P</code> → "Capture node screenshot"</p>
+        <p>2. Click on the preview above and export as <code>og-image.png</code></p>
+        <p>3. Or use a screenshot tool to capture the 1200×630 preview</p>
+    </div>
+</body>
+</html>

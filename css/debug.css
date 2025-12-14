@@ -11,6 +11,7 @@
 .debug-header,
 .debug-hero,
 .debug-features,
+.debug-mobile-reality,
 .debug-mobile-suite,
 .debug-testimonials,
 .debug-contact,
@@ -32,13 +33,19 @@
 .debug-hero-headline,
 .debug-hero-subtitle,
 .debug-hero-cta-wrapper,
-.debug-hero-trusted {
+.debug-hero-trusted,
+.debug-mobile-reality-bg,
+.debug-mobile-reality-container,
+.debug-mobile-reality-badge,
+.debug-mobile-reality-headline,
+.debug-mobile-reality-subtitle {
     outline: none !important;
 }
 
 .debug-header::after,
 .debug-hero::before,
 .debug-features::before,
+.debug-mobile-reality::before,
 .debug-mobile-suite::before,
 .debug-testimonials::before,
 .debug-contact::before,
@@ -123,6 +130,27 @@ body.debug-mode-active .debug-features::before {
     top: 10px;
     left: 10px;
     background: #22c55e;
+    color: white;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 9999;
+    border-radius: 4px;
+}
+
+/* Mobile Reality - Orange */
+body.debug-mode-active .debug-mobile-reality {
+    outline: 3px solid #f97316 !important;
+    outline-offset: -3px;
+}
+body.debug-mode-active .debug-mobile-reality::before {
+    content: 'MOBILE REALITY';
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #f97316;
     color: white;
     padding: 4px 8px;
     font-size: 10px;
@@ -419,6 +447,40 @@ body.debug-mode-active .debug-hero-cta-wrapper {
 /* Hero Trusted By - Teal Dotted */
 body.debug-mode-active .debug-hero-trusted {
     outline: 2px dotted #2dd4bf !important;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   MOBILE REALITY INTERNAL COMPONENTS (Dotted Borders)
+   ============================================ */
+
+/* Mobile Reality Background - Slate Dotted */
+body.debug-mode-active .debug-mobile-reality-bg {
+    outline: 2px dotted #64748b !important;
+    outline-offset: -2px;
+}
+
+/* Mobile Reality Container - Orange Dotted */
+body.debug-mode-active .debug-mobile-reality-container {
+    outline: 2px dotted #fb923c !important;
+    outline-offset: -2px;
+}
+
+/* Mobile Reality Badge - Purple Dotted */
+body.debug-mode-active .debug-mobile-reality-badge {
+    outline: 2px dotted #a855f7 !important;
+    outline-offset: 4px;
+}
+
+/* Mobile Reality Headline - Pink Dotted */
+body.debug-mode-active .debug-mobile-reality-headline {
+    outline: 2px dotted #ec4899 !important;
+    outline-offset: 4px;
+}
+
+/* Mobile Reality Subtitle - Rose Dotted */
+body.debug-mode-active .debug-mobile-reality-subtitle {
+    outline: 2px dotted #f43f5e !important;
     outline-offset: 2px;
 }
 

@@ -49,7 +49,7 @@ class InfiniteLogoCarousel {
 
         return `
             <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group">
-                <div class="flex items-center justify-center md:justify-start gap-[10px] w-max animate-infinite-scroll">
+                <div class="flex items-center justify-center md:justify-start gap-8 w-max animate-infinite-scroll">
                     <!-- Original Items -->
                     ${itemsHTML}
                     

@@ -68,7 +68,7 @@ class Hero extends Component {
         const { headline } = this.props;
         
         return `
-            <h1 class="debug-hero-headline [animation:fadeSlideIn_1s_ease-out_1s_both] animate-on-scroll animate flex flex-wrap justify-center gap-x-[0.25em] gap-y-2 leading-[1.1] md:text-8xl cursor-default text-6xl font-medium tracking-tighter font-manrope mb-16">
+            <h1 class="debug-hero-headline [animation:fadeSlideIn_1s_ease-out_1s_both] animate-on-scroll animate flex flex-wrap justify-center gap-x-[0.25em] gap-y-2 leading-[1.1] md:text-8xl cursor-default text-[2.5rem] font-medium tracking-tighter font-manrope mb-16">
                 <!-- Static Word -->
                 <span class="inline-flex bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50 opacity-60">${headline.static1}</span>
 
@@ -183,7 +183,7 @@ class Hero extends Component {
                     ${this._renderHeadline()}
 
                     <!-- Subtext -->
-                    <p class="debug-hero-subtitle [animation:fadeSlideIn_1s_ease-out_1.2s_both] animate-on-scroll leading-relaxed md:text-2xl text-xl text-gray-400 tracking-normal max-w-3xl mr-auto mb-12 ml-auto animate font-manrope font-medium">
+                    <p class="debug-hero-subtitle [animation:fadeSlideIn_1s_ease-out_1.2s_both] animate-on-scroll leading-relaxed md:text-2xl text-[1.07rem] text-gray-400 tracking-normal max-w-3xl mr-auto mb-12 ml-auto animate font-manrope font-medium">
                         ${subtitle}
                     </p>
 

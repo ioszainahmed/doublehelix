@@ -1,0 +1,87 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="50%" style="stop-color:#0f0f0f"/>
+      <stop offset="100%" style="stop-color:#0a0a0a"/>
+    </linearGradient>
+    
+    <!-- Orange glow gradient -->
+    <radialGradient id="glowOrange" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ea580c;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:0"/>
+    </radialGradient>
+    
+    <!-- Top ambient light -->
+    <radialGradient id="topGlow" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+    </radialGradient>
+    
+    <!-- Text gradient -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="70%" style="stop-color:#ffffff;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.5"/>
+    </linearGradient>
+    
+    <!-- Accent gradient -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:transparent"/>
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:transparent"/>
+    </linearGradient>
+    
+    <!-- Grid pattern -->
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Grid overlay -->
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Top ambient glow -->
+  <ellipse cx="600" cy="-100" rx="800" ry="400" fill="url(#topGlow)"/>
+  
+  <!-- Orange accent glow behind text -->
+  <ellipse cx="600" cy="315" rx="400" ry="200" fill="url(#glowOrange)"/>
+  
+  <!-- Decorative lines -->
+  <line x1="0" y1="100" x2="300" y2="100" stroke="rgba(234,88,12,0.2)" stroke-width="1"/>
+  <line x1="900" y1="100" x2="1200" y2="100" stroke="rgba(234,88,12,0.2)" stroke-width="1"/>
+  <line x1="0" y1="530" x2="400" y2="530" stroke="rgba(234,88,12,0.2)" stroke-width="1"/>
+  <line x1="800" y1="530" x2="1200" y2="530" stroke="rgba(234,88,12,0.2)" stroke-width="1"/>
+  
+  <!-- Corner accents -->
+  <path d="M 30 30 L 30 80 M 30 30 L 80 30" stroke="rgba(234,88,12,0.4)" stroke-width="2" fill="none"/>
+  <path d="M 1170 30 L 1170 80 M 1170 30 L 1120 30" stroke="rgba(234,88,12,0.4)" stroke-width="2" fill="none"/>
+  <path d="M 30 600 L 30 550 M 30 600 L 80 600" stroke="rgba(234,88,12,0.4)" stroke-width="2" fill="none"/>
+  <path d="M 1170 600 L 1170 550 M 1170 600 L 1120 600" stroke="rgba(234,88,12,0.4)" stroke-width="2" fill="none"/>
+  
+  <!-- Company name -->
+  <text x="600" y="290" text-anchor="middle" font-family="'Manrope', 'Inter', system-ui, sans-serif" font-size="86" font-weight="700" fill="url(#textGradient)" letter-spacing="-3">
+    DoubleHelix
+  </text>
+  
+  <!-- Tagline -->
+  <text x="600" y="370" text-anchor="middle" font-family="'Manrope', 'Inter', system-ui, sans-serif" font-size="28" font-weight="400" fill="rgba(255,255,255,0.5)" letter-spacing="0.5">
+    Scale your app with smart infrastructure
+  </text>
+  
+  <!-- Bottom accent bar -->
+  <rect x="450" y="420" width="300" height="3" rx="1.5" fill="url(#accentGradient)"/>
+  
+  <!-- Subtle dot pattern accents -->
+  <circle cx="150" cy="315" r="2" fill="rgba(234,88,12,0.5)"/>
+  <circle cx="180" cy="315" r="2" fill="rgba(234,88,12,0.3)"/>
+  <circle cx="210" cy="315" r="2" fill="rgba(234,88,12,0.2)"/>
+  
+  <circle cx="1050" cy="315" r="2" fill="rgba(234,88,12,0.5)"/>
+  <circle cx="1020" cy="315" r="2" fill="rgba(234,88,12,0.3)"/>
+  <circle cx="990" cy="315" r="2" fill="rgba(234,88,12,0.2)"/>
+</svg>

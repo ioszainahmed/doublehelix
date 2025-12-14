@@ -15,8 +15,8 @@
 class ContactForm extends Component {
     constructor(containerId, props = {}) {
         super(containerId, {
-            title: 'Ready to personalize your',
-            titleHighlight: 'chain?',
+            title: 'Ready to scale your',
+            titleHighlight: 'app?',
             subtitle: 'Our service is for protocols that believe in owning a safe, scalable, and decentralized blockspace. We promise that scaling with DoubleHelix will help you declutter your mempool.',
             submitText: 'Submit Request',
             fields: [
