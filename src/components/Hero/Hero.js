@@ -40,8 +40,8 @@ class Hero extends Component {
     _renderAnimatedLetter(letter, delay) {
         return `
             <span class="relative inline-block overflow-hidden h-[1.1em]">
-                <span class="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50" style="transition-delay: ${delay}ms">${letter}</span>
-                <span class="absolute top-0 left-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0 text-orange-400" style="transition-delay: ${delay}ms">${letter}</span>
+                <span class="hero-letter-white block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50" style="transition-delay: ${delay}ms">${letter}</span>
+                <span class="hero-letter-orange absolute top-0 left-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0 text-orange-400" style="transition-delay: ${delay}ms">${letter}</span>
             </span>
         `;
     }
@@ -73,7 +73,7 @@ class Hero extends Component {
                 <span class="inline-flex bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50 opacity-60">${headline.static1}</span>
 
                 <!-- Interactive Group -->
-                <span class="group inline-flex flex-wrap justify-center gap-x-[0.25em] cursor-pointer select-none">
+                <span class="hero-interactive-group group inline-flex flex-wrap justify-center gap-x-[0.25em] cursor-pointer select-none">
                     ${headline.interactive.map((word, idx) => 
                         this._renderAnimatedWord(word, idx * 100)
                     ).join('')}
@@ -204,6 +204,65 @@ class Hero extends Component {
                 </div>
             </section>
         `;
+    }
+
+    /**
+     * Initialize auto-animation
+     */
+    onMount() {
+        this._setupAutoAnimation();
+    }
+
+    /**
+     * Set up the auto-animation interval
+     * @private
+     */
+    _setupAutoAnimation() {
+        const interactiveGroup = this.container.querySelector('.hero-interactive-group');
+        if (!interactiveGroup) return;
+
+        let isActive = false;
+
+        // Toggle animation every 3 seconds
+        this._animationInterval = setInterval(() => {
+            isActive = !isActive;
+            const whiteLetters = interactiveGroup.querySelectorAll('.hero-letter-white');
+            const orangeLetters = interactiveGroup.querySelectorAll('.hero-letter-orange');
+
+            if (isActive) {
+                // Animate to orange state
+                whiteLetters.forEach(el => el.classList.add('-translate-y-full'));
+                orangeLetters.forEach(el => el.classList.remove('translate-y-full'));
+            } else {
+                // Animate back to white state
+                whiteLetters.forEach(el => el.classList.remove('-translate-y-full'));
+                orangeLetters.forEach(el => el.classList.add('translate-y-full'));
+            }
+        }, 3000);
+    }
+
+    /**
+     * Clear animation interval
+     * @private
+     */
+    _clearAutoAnimation() {
+        if (this._animationInterval) {
+            clearInterval(this._animationInterval);
+            this._animationInterval = null;
+        }
+
+        // Reset to default state
+        const interactiveGroup = this.container?.querySelector('.hero-interactive-group');
+        if (interactiveGroup) {
+            const whiteLetters = interactiveGroup.querySelectorAll('.hero-letter-white');
+            const orangeLetters = interactiveGroup.querySelectorAll('.hero-letter-orange');
+            whiteLetters.forEach(el => el.classList.remove('-translate-y-full'));
+            orangeLetters.forEach(el => el.classList.add('translate-y-full'));
+        }
+    }
+
+    onUnmount() {
+        this._clearAutoAnimation();
     }
 }
 

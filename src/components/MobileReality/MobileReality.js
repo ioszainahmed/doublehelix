@@ -76,7 +76,7 @@ class MobileReality extends Component {
         return `
             <div class="[animation:fadeSlideIn_1s_ease-out_0.6s_both] animate-on-scroll text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-manrope">
                 <p>${this.props.subtitle}<sup class="text-gray-500 ml-0.5">${this.props.superscript}</sup>.</p>
-                <p class="mt-1">${this.props.tagline}</p>
+                <p class="mt-1 pb-6">${this.props.tagline}</p>
             </div>
         `;
     }
@@ -95,7 +95,7 @@ class MobileReality extends Component {
                     <div class="debug-mobile-reality-container relative rounded-[2.5rem] bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-lg py-8 md:py-10 px-8 md:px-12" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(255, 255, 255, 0.1), rgba(249, 115, 22, 0.2)); --border-radius-before: 2.5rem">
                         <div class="text-center">
                             <!-- Badge -->
-                            <div class="debug-mobile-reality-badge mb-8 md:mb-12">
+                            <div class="debug-mobile-reality-badge pt-6 mb-8 md:mb-12">
                                 ${this._renderBadge()}
                             </div>
                             

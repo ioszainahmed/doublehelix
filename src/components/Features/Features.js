@@ -16,11 +16,10 @@ class Features extends Component {
     constructor(containerId, props = {}) {
         super(containerId, {
             mainFeature: {
-                title: 'High-Performance API Integration',
+                title: 'Engineered at the Core',
                 description: [
-                    'Connect to the decentralized web with DoubleHelix\'s unified API surface. Designed for speed, reliability, and infinite scale.',
-                    'Our SDKs provide type-safe access to over 50+ protocols with a single line of code. Eliminate node maintenance and focus on building your application logic with 99.99% uptime guaranteed.',
-                    'Instant global state access — stream events, query historical data, and broadcast transactions with sub-millisecond latency.'
+                    'A unified API layer that acts as your app\'s DNA.<br>Connecting data, AI, and mobile experiences with precision.',
+                    'Built for performance today, designed to adapt tomorrow.'
                 ]
             },
             cards: [
@@ -51,16 +50,17 @@ class Features extends Component {
                 <div class="grid lg:grid-cols-2 gap-0">
                     <!-- Text Content -->
                     <div class="md:p-16 flex flex-col z-10 pt-8 pr-8 pb-8 pl-8 relative justify-center">
-                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center mb-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-white" fill="none" stroke="currentColor" stroke-width="2">
-                                <path fill="#ffffff" d="M5.5 16V8a3 3 0 0 0-3-3a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5a3 3 0 0 0 3-3m13-8v8a3 3 0 0 0 3 3a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5a3 3 0 0 0-3 3" opacity=".5"></path>
-                                <path fill="#ffffff" d="M11.5 19c-1.886 0-2.828 0-3.414-.586S7.5 16.886 7.5 15V9c0-1.886 0-2.828.586-3.414S9.614 5 11.5 5h1c1.886 0 2.828 0 3.414.586S16.5 7.114 16.5 9v6c0 1.886 0 2.828-.586 3.414S14.386 19 12.5 19z"></path>
-                            </svg>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-white" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path fill="#ffffff" d="M5.5 16V8a3 3 0 0 0-3-3a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5a3 3 0 0 0 3-3m13-8v8a3 3 0 0 0 3 3a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5a3 3 0 0 0-3 3" opacity=".5"></path>
+                                    <path fill="#ffffff" d="M11.5 19c-1.886 0-2.828 0-3.414-.586S7.5 16.886 7.5 15V9c0-1.886 0-2.828.586-3.414S9.614 5 11.5 5h1c1.886 0 2.828 0 3.414.586S16.5 7.114 16.5 9v6c0 1.886 0 2.828-.586 3.414S14.386 19 12.5 19z"></path>
+                                </svg>
+                            </div>
+                            <h2 class="leading-[1.1] md:text-4xl text-3xl font-semibold text-white tracking-tight font-manrope">
+                                ${mainFeature.title}
+                            </h2>
                         </div>
-                        
-                        <h2 class="leading-[1.1] md:text-4xl text-3xl font-semibold text-white tracking-tight font-manrope mt-6 mb-6">
-                            ${mainFeature.title}
-                        </h2>
                         
                         <div class="space-y-6 text-lg text-gray-400 font-sans leading-relaxed">
                             ${mainFeature.description.map(p => `<p>${p}</p>`).join('')}
