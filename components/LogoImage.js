@@ -10,7 +10,7 @@ class LogoImage {
      * @param {string} alt - Alternative text for accessibility
      * @param {string} className - CSS classes for styling
      */
-    constructor(src, alt, className = 'h-20 w-40 object-contain') {
+    constructor(src, alt, className = 'h-12 w-24 md:h-20 md:w-40 object-contain') {
         this.src = src;
         this.alt = alt;
         this.className = className;

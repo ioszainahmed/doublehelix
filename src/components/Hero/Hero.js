@@ -26,7 +26,7 @@ class Hero extends Component {
                 interactive: ['your', 'app'],
                 static2: ['with', 'smart', 'infrastructure']
             },
-            subtitle: 'Engineering a future-proof foundation for your product. From solid-core architecture to unified systems that scale without limits, built all into a single cohesive stack.',
+            subtitle: 'Engineering a future-proof foundation for your product.<br><br>From solid-core architecture to unified systems that scale without limits, built all into a single cohesive stack.',
             ctaText: 'Start Building',
             trustedByText: 'Trusted by',
             ...props
@@ -68,7 +68,7 @@ class Hero extends Component {
         const { headline } = this.props;
         
         return `
-            <h1 class="[animation:fadeSlideIn_1s_ease-out_1s_both] animate-on-scroll animate flex flex-wrap justify-center gap-x-[0.25em] gap-y-2 leading-[1.1] md:text-8xl cursor-default text-6xl font-medium tracking-tighter font-manrope mb-8">
+            <h1 class="debug-hero-headline [animation:fadeSlideIn_1s_ease-out_1s_both] animate-on-scroll animate flex flex-wrap justify-center gap-x-[0.25em] gap-y-2 leading-[1.1] md:text-8xl cursor-default text-6xl font-medium tracking-tighter font-manrope mb-16">
                 <!-- Static Word -->
                 <span class="inline-flex bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50 opacity-60">${headline.static1}</span>
 
@@ -147,13 +147,13 @@ class Hero extends Component {
             <section class="debug-hero min-h-screen flex flex-col md:pt-20 overflow-hidden w-full pt-32 relative items-center justify-center" style="mask-image: linear-gradient(180deg, transparent, black 0%, black 95%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, black 0%, black 95%, transparent);">
                 
                 <!-- Background Effects -->
-                <div class="absolute inset-0 -z-20">
+                <div class="debug-hero-bg absolute inset-0 -z-20">
                     <div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[120%] h-[80%] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-zinc-900/20 to-black"></div>
                     <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
                 </div>
 
                 <!-- Grid/Curtain Structure -->
-                <div class="absolute inset-0 w-full h-full grid grid-cols-1 md:grid-cols-7 gap-0 -z-10 pointer-events-none">
+                <div class="debug-hero-grid absolute inset-0 w-full h-full grid grid-cols-1 md:grid-cols-7 gap-0 -z-10 pointer-events-none">
                     <div class="relative h-full hidden md:block border-r border-white/5 col-anim delay-1">
                         <div class="absolute bottom-0 left-0 right-0 bg-black h-[75%] border-t border-white/10 shadow-[0_-20px_60px_-10px_rgba(0,0,0,0.8)]"></div>
                     </div>
@@ -165,7 +165,6 @@ class Hero extends Component {
                     </div>
                     <div class="relative h-full border-r border-white/5 md:border-none col-anim delay-4">
                         <div class="absolute bottom-0 left-0 right-0 bg-black h-[45%] border-t border-white/10 shadow-[0_-20px_60px_-10px_rgba(0,0,0,0.8)]"></div>
-                        <div class="absolute top-[20%] left-0 right-0 h-[30%] bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
                     </div>
                     <div class="relative h-full hidden md:block border-l border-white/5 col-anim delay-5">
                         <div class="absolute bottom-0 left-0 right-0 bg-black h-[55%] border-t border-white/10 shadow-[0_-20px_60px_-10px_rgba(0,0,0,0.8)]"></div>
@@ -179,22 +178,22 @@ class Hero extends Component {
                 </div>
 
                 <!-- Content Container -->
-                <div class="text-center max-w-5xl z-10 mt-12 mr-auto mb-8 ml-auto pr-6 pl-6 relative">
+                <div class="debug-hero-content text-center max-w-5xl z-10 mt-4 mr-auto mb-8 ml-auto pr-6 pl-6 relative">
                     
                     ${this._renderHeadline()}
 
                     <!-- Subtext -->
-                    <p class="[animation:fadeSlideIn_1s_ease-out_1.2s_both] animate-on-scroll leading-relaxed md:text-2xl text-xl text-gray-400 tracking-normal max-w-3xl mr-auto mb-12 ml-auto animate font-manrope font-medium">
+                    <p class="debug-hero-subtitle [animation:fadeSlideIn_1s_ease-out_1.2s_both] animate-on-scroll leading-relaxed md:text-2xl text-xl text-gray-400 tracking-normal max-w-3xl mr-auto mb-12 ml-auto animate font-manrope font-medium">
                         ${subtitle}
                     </p>
 
                     <!-- CTA Button -->
-                    <div class="[animation:fadeSlideIn_1s_ease-out_1.4s_both] animate-on-scroll flex flex-col md:flex-row items-center justify-center gap-6 mb-12 animate">
+                    <div class="debug-hero-cta-wrapper [animation:fadeSlideIn_1s_ease-out_1.4s_both] animate-on-scroll flex flex-col md:flex-row items-center justify-center gap-6 mb-12 animate">
                         ${this._renderCTA()}
                     </div>
 
                     <!-- Trusted By -->
-                    <div class="[animation:fadeSlideIn_1s_ease-out_1.6s_both] animate-on-scroll flex flex-col animate mt-16 mb-0 gap-x-4 gap-y-4 items-center">
+                    <div class="debug-hero-trusted [animation:fadeSlideIn_1s_ease-out_1.6s_both] animate-on-scroll flex flex-col animate mt-16 mb-0 gap-x-4 gap-y-4 items-center">
                         <p class="text-xs text-gray-500 font-medium uppercase tracking-widest font-sans">${trustedByText}</p>
                     </div>
                 </div>

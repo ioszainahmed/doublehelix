@@ -25,7 +25,14 @@
 .debug-form,
 .debug-nav,
 .debug-logo-carousel,
-.debug-cta {
+.debug-cta,
+.debug-hero-bg,
+.debug-hero-grid,
+.debug-hero-content,
+.debug-hero-headline,
+.debug-hero-subtitle,
+.debug-hero-cta-wrapper,
+.debug-hero-trusted {
     outline: none !important;
 }
 
@@ -366,6 +373,52 @@ body.debug-mode-active .debug-logo-carousel::before {
 /* CTA Button - Orange */
 body.debug-mode-active .debug-cta {
     outline: 2px solid #fb923c !important;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   HERO INTERNAL COMPONENTS (Dotted Borders)
+   ============================================ */
+
+/* Hero Background Effects - Slate Dotted */
+body.debug-mode-active .debug-hero-bg {
+    outline: 2px dotted #64748b !important;
+    outline-offset: -2px;
+}
+
+/* Hero Grid/Curtain - Zinc Dotted */
+body.debug-mode-active .debug-hero-grid {
+    outline: 2px dotted #71717a !important;
+    outline-offset: -2px;
+}
+
+/* Hero Content Container - Sky Dotted */
+body.debug-mode-active .debug-hero-content {
+    outline: 2px dotted #38bdf8 !important;
+    outline-offset: -2px;
+}
+
+/* Hero Headline - Fuchsia Dotted */
+body.debug-mode-active .debug-hero-headline {
+    outline: 2px dotted #d946ef !important;
+    outline-offset: 4px;
+}
+
+/* Hero Subtitle - Violet Dotted */
+body.debug-mode-active .debug-hero-subtitle {
+    outline: 2px dotted #8b5cf6 !important;
+    outline-offset: 2px;
+}
+
+/* Hero CTA Wrapper - Amber Dotted */
+body.debug-mode-active .debug-hero-cta-wrapper {
+    outline: 2px dotted #fbbf24 !important;
+    outline-offset: 4px;
+}
+
+/* Hero Trusted By - Teal Dotted */
+body.debug-mode-active .debug-hero-trusted {
+    outline: 2px dotted #2dd4bf !important;
     outline-offset: 2px;
 }
 
