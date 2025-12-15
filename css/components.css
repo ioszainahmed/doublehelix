@@ -254,7 +254,7 @@
     animation: typing 1.5s steps(30, end) 2.5s forwards, blink-caret 0.75s step-end infinite;
 }
 
-/* Infinite Scroll Animation */
+/* Infinite Scroll Animation (legacy - percentage based) */
 .animate-infinite-scroll {
     animation: infinite-scroll 40s linear infinite;
 }
@@ -266,8 +266,31 @@
     }
 }
 
+/* Precise Infinite Scroll Animation (pixel-based for seamless looping) */
+@keyframes infinite-scroll-precise {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(var(--scroll-width, 50%) * -1));
+    }
+}
+
+.animate-infinite-scroll-precise {
+    animation: infinite-scroll-precise 40s linear infinite;
+    will-change: transform;
+}
+
+/* Faster animation on mobile */
+@media (max-width: 768px) {
+    .animate-infinite-scroll-precise {
+        animation: infinite-scroll-precise 20s linear infinite;
+    }
+}
+
 /* Pause animation on hover */
-.group:hover .animate-infinite-scroll {
+.group:hover .animate-infinite-scroll,
+.group:hover .animate-infinite-scroll-precise {
     animation-play-state: paused;
 }
 
@@ -275,6 +298,7 @@
 .animate-carousel {
     animation: carousel 15s infinite;
 }
+
 
 
 

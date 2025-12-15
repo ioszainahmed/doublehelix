@@ -30,6 +30,12 @@ const LOAD_ORDER = [
     // Components - Hero
     'src/components/Hero/Hero.js',
     
+    // Components - Mobile Reality
+    'src/components/MobileReality/MobileReality.js',
+    
+    // Components - Idea to App
+    'src/components/IdeaToApp/IdeaToApp.js',
+    
     // Components - Features
     'src/components/Features/FeatureCard.js',
     'src/components/Features/APIStatusCard.js',
@@ -64,5 +70,6 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     window.LOAD_ORDER = LOAD_ORDER;
 }
+
 
 

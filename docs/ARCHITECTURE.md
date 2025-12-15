@@ -27,6 +27,12 @@ doublehelix/
 │   │   ├── Hero/              # Hero section
 │   │   │   └── Hero.js
 │   │   │
+│   │   ├── MobileReality/     # Mobile reality section (statistics)
+│   │   │   └── MobileReality.js
+│   │   │
+│   │   ├── IdeaToApp/         # 90-day transformation process
+│   │   │   └── IdeaToApp.js
+│   │   │
 │   │   ├── Features/          # Features section
 │   │   │   ├── Features.js
 │   │   │   ├── FeatureCard.js
@@ -58,7 +64,8 @@ doublehelix/
 │   ├── main.css               # Base styles
 │   ├── animations.css         # Keyframe animations
 │   ├── components.css         # Component-specific styles
-│   └── utilities.css          # Utility classes
+│   ├── utilities.css          # Utility classes
+│   └── debug.css              # Debug mode styles
 │
 ├── js/                        # Legacy JavaScript
 │   ├── main.js                # Main initialization
@@ -69,7 +76,8 @@ doublehelix/
 │   └── logos/                 # Company logos
 │
 └── docs/                      # Documentation
-    └── ARCHITECTURE.md        # This file
+    ├── ARCHITECTURE.md        # This file
+    └── COMPONENT_GUIDE.md     # Component development guide
 ```
 
 ---
@@ -81,20 +89,25 @@ doublehelix/
 │                              index.html                                      │
 │                         (Component Mount Points)                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│  Row 1:                                                                      │
 │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
-│   │ #background  │  │   #header    │  │    #hero     │  │  #features   │   │
+│   │ #background  │  │   #header    │  │    #hero     │  │#mobile-real- │   │
+│   │  -container  │  │  -container  │  │  -container  │  │ity-container │   │
+│   └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│  Row 2:                                                                      │
+│   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│   │ #idea-to-app │  │#mobile-suite │  │  #features   │  │#testimonials │   │
 │   │  -container  │  │  -container  │  │  -container  │  │  -container  │   │
 │   └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│  Row 3:                                                                      │
+│   ┌──────────────┐  ┌──────────────┐                                        │
+│   │  #contact-   │  │   #footer    │                                        │
+│   │  container   │  │  -container  │                                        │
+│   └──────────────┘  └──────────────┘                                        │
 │                                                                              │
-│   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
-│   │ #mobile-     │  │#testimonials │  │  #contact-   │  │   #footer    │   │
-│   │suite-contain.│  │  -container  │  │  container   │  │  -container  │   │
-│   └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
-│                                                                              │
-└──────────────────────────────────┬──────────────────────────────────────────┘
-                                   │
-                                   ▼
+└──────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+                                       ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                                App.js                                        │
 │                          (Orchestrator/Controller)                           │
@@ -105,6 +118,8 @@ doublehelix/
 │   │   .register('background', new Background())                          │   │
 │   │   .register('header', new Header())                                  │   │
 │   │   .register('hero', new Hero())                                      │   │
+│   │   .register('mobileReality', new MobileReality())                    │   │
+│   │   .register('ideaToApp', new IdeaToApp())                            │   │
 │   │   .register('features', new Features())                              │   │
 │   │   .register('mobileSuite', new MobileSuite())                        │   │
 │   │   .register('testimonials', new Testimonials())                      │   │
@@ -127,26 +142,24 @@ doublehelix/
                             │   (Base)     │
                             └──────┬───────┘
                                    │
-           ┌───────────────────────┼───────────────────────┐
-           │                       │                       │
-           ▼                       ▼                       ▼
-    ┌─────────────┐         ┌─────────────┐         ┌─────────────┐
-    │ Background  │         │   Header    │         │    Hero     │
-    └─────────────┘         └─────────────┘         └─────────────┘
-           │
-           │              ┌─────────────────────────────────────────┐
-           │              │                                         │
-           ▼              ▼                                         ▼
-    ┌─────────────┐ ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
-    │  Features   │ │ MobileSuite │  │Testimonials │  │ContactForm  │
-    │             │ └─────────────┘  └─────────────┘  └─────────────┘
-    │  ┌───────┐  │
-    │  │Card   │  │                                   ┌─────────────┐
-    │  │Card   │  │                                   │   Footer    │
-    │  │Status │  │                                   └─────────────┘
-    │  └───────┘  │
-    └─────────────┘
+    ┌──────────┬──────────┬────────┼────────┬──────────┬──────────┐
+    │          │          │        │        │          │          │
+    ▼          ▼          ▼        ▼        ▼          ▼          ▼
+┌──────────┐┌──────────┐┌──────────┐┌──────────┐┌──────────┐┌──────────┐
+│Background││  Header  ││   Hero   ││Mobile-   ││IdeaToApp ││ Features │
+└──────────┘└──────────┘└──────────┘│ Reality  │└──────────┘│┌────────┐│
+                                    └──────────┘            ││APIStatus│
+                                                            ││Card    │
+    ┌──────────┬──────────┬──────────┐                      │└────────┘│
+    │          │          │          │                      └──────────┘
+    ▼          ▼          ▼          ▼
+┌──────────┐┌──────────┐┌──────────┐┌──────────┐
+│Mobile-   ││Testimoni-││Contact-  ││  Footer  │
+│ Suite    ││   als    ││  Form    ││          │
+└──────────┘└──────────┘└──────────┘└──────────┘
 ```
+
+### Component Count: 12 (10 main sections + 2 sub-components)
 
 ---
 
@@ -161,13 +174,17 @@ Each component has ONE job:
 | `Component.js`   | Component lifecycle management           |
 | `ComponentLoader`| Registration and mounting coordination   |
 | `EventBus`       | Inter-component communication            |
+| `Background`     | Background effects and animations        |
 | `Header`         | Navigation UI                            |
 | `Hero`           | Hero section content                     |
+| `MobileReality`  | Mobile statistics showcase               |
+| `IdeaToApp`      | 90-day transformation process            |
 | `Features`       | Feature cards layout                     |
+| `FeatureCard`    | Individual feature card rendering        |
 | `APIStatusCard`  | API status visualization                 |
-| `MobileSuite`    | Mobile device showcase                   |
-| `Testimonials`   | Customer testimonials                    |
-| `ContactForm`    | Form handling                            |
+| `MobileSuite`    | Mobile device mockup showcase            |
+| `Testimonials`   | Customer testimonials carousel           |
+| `ContactForm`    | Form handling and validation             |
 | `Footer`         | Footer links and info                    |
 
 ### **O - Open/Closed Principle**
@@ -488,6 +505,8 @@ class EventBus {
 ---
 
 *Last Updated: December 2024*
-*Architecture Version: 2.0*
+*Architecture Version: 2.1*
+*Components: 12 (10 main + 2 sub-components)*
+
 
 

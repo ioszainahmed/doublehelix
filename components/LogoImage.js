@@ -18,10 +18,11 @@ class LogoImage {
 
     /**
      * Renders the image element
+     * Uses explicit dimensions and loading="eager" to prevent layout shifts during animation
      * @returns {string} HTML string for the image
      */
     render() {
-        return `<img src="${this.src}" alt="${this.alt}" class="${this.className}">`;
+        return `<img src="${this.src}" alt="${this.alt}" class="${this.className}" loading="eager" draggable="false">`;
     }
 }
 

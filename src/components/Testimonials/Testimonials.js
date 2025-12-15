@@ -18,49 +18,49 @@ class Testimonials extends Component {
                 badge: 'Testimonials',
                 title: 'Proven results,',
                 titleHighlight: 'delivered',
-                subtitle: "See how leading protocols and dApps are scaling their infrastructure with DoubleHelix's unified layer."
+                subtitle: "See how businesses are scaling their mobile presence with DoubleHelix's unified app infrastructure."
             },
             carouselItems: [
                 {
-                    stat: '12',
+                    stat: '3',
                     statSuffix: 'x',
                     statColor: 'orange',
-                    description: 'Increase in transaction throughput after migrating to DoubleHelix L2 rollups.',
-                    quote: 'We needed a scalable infrastructure that didn\'t compromise on decentralization. DoubleHelix delivered exactly that. Our gas fees dropped by 90% overnight while maintaining instant finality.',
-                    author: 'Elena Rodriguez',
-                    role: 'Lead Protocol Eng, Uniswap',
-                    company: 'uniswap'
+                    description: 'Faster time-to-market compared to their previous development partner.',
+                    quote: 'DoubleHelix took our concept from napkin sketch to App Store in 8 weeks. The architecture they built handles our 50K daily orders without breaking a sweat. Best decision we made.',
+                    author: 'Marcus Chen',
+                    role: 'Founder, QuickPantri',
+                    company: 'producthunt'
                 },
                 {
-                    stat: '99',
+                    stat: '99.9',
                     statSuffix: '%',
                     statColor: 'blue',
-                    description: 'Uptime guaranteed with our decentralized sequencer network.',
-                    quote: 'Migrating our DEX to DoubleHelix\'s rollup infrastructure was seamless. We\'ve seen zero downtime in 18 months of operation, even during peak network congestion.',
-                    author: 'James Wu',
-                    role: 'Core Dev, Arbitrum',
-                    company: 'arbitrum'
+                    description: 'Uptime maintained across peak traffic periods and flash sales.',
+                    quote: 'We launched during Black Friday with zero hiccups. The infrastructure DoubleHelix built scaled automatically when we hit 10x our normal traffic. Their team was on standby the entire time.',
+                    author: 'Rachel Torres',
+                    role: 'VP Digital, Marriott',
+                    company: 'marriott'
                 },
                 {
-                    stat: '50',
-                    statSuffix: 'ms',
+                    stat: '47',
+                    statSuffix: '%',
                     statColor: 'red',
-                    description: 'Latency achieved for cross-chain message propagation.',
-                    quote: 'The speed of DoubleHelix\'s bridge infrastructure is unmatched. We can now settle transactions across multiple rollups almost instantaneously, a game changer for our users.',
-                    author: 'Sarah Jenkins',
-                    role: 'PM, Optimism',
-                    company: 'optimism'
+                    description: 'Increase in user retention after the app redesign and performance overhaul.',
+                    quote: 'Our legacy app was bleeding users. DoubleHelix rebuilt it from scratch with a modern stack—load times dropped from 4 seconds to under 400ms. Users actually enjoy opening the app now.',
+                    author: 'Daniel Park',
+                    role: 'CTO, TacoMex',
+                    company: 'uber'
                 }
             ],
             gridCards: [
                 {
-                    stat: '14',
-                    statSuffix: 'ms',
-                    description: 'Global latency reduction on edge nodes.',
-                    quote: 'From branding to execution, the DoubleHelix API suite is flawless. The latency on our oracle updates dropped significantly, giving us a competitive edge in high-frequency markets.',
-                    author: 'David Chen',
-                    role: 'CTO, Chainlink',
-                    company: 'chainlink'
+                    stat: '2M',
+                    statSuffix: '+',
+                    description: 'Monthly active users on apps built by DoubleHelix.',
+                    quote: 'We needed a team that could move fast without cutting corners. DoubleHelix delivered a production-ready app in 6 weeks, complete with real-time sync, offline mode, and a backend that just works.',
+                    author: 'Sofia Andersson',
+                    role: 'CEO, WanaSell',
+                    company: 'stripe'
                 }
             ],
             ...props
@@ -246,7 +246,7 @@ class Testimonials extends Component {
                             <span class="text-white font-semibold ml-1">4.9/5</span>
                         </div>
                     </div>
-                    <p class="text-xs font-medium text-zinc-500 mt-0.5 px-6 py-1.5">from 2,000+ protocols</p>
+                    <p class="text-xs font-medium text-zinc-500 mt-0.5 px-6 py-1.5">from 50+ shipped apps</p>
                 </div>
 
                 <button class="group flex items-center gap-2 pl-6 pr-2 py-2 rounded-full bg-zinc-900 border border-white/10 hover:border-white/20 hover:bg-zinc-800 transition-all duration-300">

@@ -26,7 +26,8 @@ class Hero extends Component {
                 interactive: ['your', 'app'],
                 static2: ['with', 'smart', 'infrastructure']
             },
-            subtitle: 'Engineering a future-proof foundation for your product.<br><br>From solid-core architecture to unified systems that scale without limits, built all into a single cohesive stack.',
+            subtitleMain: 'Engineering bold ideas into living systems.',
+            subtitleSecondary: 'From solid-core architecture to unified systems that scale without limits, built all into a single cohesive stack.',
             ctaText: 'Start Building',
             trustedByText: 'Trusted by',
             ...props
@@ -68,7 +69,7 @@ class Hero extends Component {
         const { headline } = this.props;
         
         return `
-            <h1 class="debug-hero-headline [animation:fadeSlideIn_1s_ease-out_1s_both] animate-on-scroll animate flex flex-wrap justify-center gap-x-[0.25em] gap-y-2 leading-[1.1] md:text-8xl cursor-default text-[2.5rem] font-medium tracking-tighter font-manrope mb-16">
+            <h1 class="debug-hero-headline [animation:fadeSlideIn_1s_ease-out_1s_both] animate-on-scroll animate flex flex-wrap justify-center gap-x-[0.25em] gap-y-2 leading-[1.1] text-5xl md:text-7xl lg:text-8xl cursor-default font-medium tracking-tighter font-manrope mb-16">
                 <!-- Static Word -->
                 <span class="inline-flex bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50 opacity-60">${headline.static1}</span>
 
@@ -141,10 +142,10 @@ class Hero extends Component {
     }
 
     render() {
-        const { subtitle, trustedByText } = this.props;
+        const { subtitleMain, subtitleSecondary, trustedByText } = this.props;
 
         return `
-            <section class="debug-hero min-h-screen flex flex-col md:pt-20 overflow-hidden w-full pt-32 relative items-center justify-center" style="mask-image: linear-gradient(180deg, transparent, black 0%, black 95%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, black 0%, black 95%, transparent);">
+            <section class="debug-hero min-h-screen flex flex-col md:pt-20 overflow-hidden w-full pt-0 relative items-center justify-center" style="mask-image: linear-gradient(180deg, transparent, black 0%, black 95%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, black 0%, black 95%, transparent);">
                 
                 <!-- Background Effects -->
                 <div class="debug-hero-bg absolute inset-0 -z-20">
@@ -178,14 +179,19 @@ class Hero extends Component {
                 </div>
 
                 <!-- Content Container -->
-                <div class="debug-hero-content text-center max-w-5xl z-10 mt-4 mr-auto mb-8 ml-auto pr-6 pl-6 relative">
+                <div class="debug-hero-content text-center max-w-5xl z-10 md:mt-4 mr-auto mb-8 ml-auto pr-6 pl-6 relative">
                     
                     ${this._renderHeadline()}
 
                     <!-- Subtext -->
-                    <p class="debug-hero-subtitle [animation:fadeSlideIn_1s_ease-out_1.2s_both] animate-on-scroll leading-relaxed md:text-2xl text-[1.07rem] text-gray-400 tracking-normal max-w-3xl mr-auto mb-12 ml-auto animate font-manrope font-medium">
-                        ${subtitle}
-                    </p>
+                    <div class="debug-hero-subtitle [animation:fadeSlideIn_1s_ease-out_1.2s_both] animate-on-scroll max-w-3xl mr-auto mb-12 ml-auto animate">
+                        <p class="leading-relaxed text-2xl md:text-3xl text-gray-400 tracking-normal font-manrope font-medium mb-4">
+                            ${subtitleMain}
+                        </p>
+                        <p class="leading-relaxed text-base md:text-lg text-gray-500 tracking-normal font-manrope px-6 md:px-12">
+                            ${subtitleSecondary}
+                        </p>
+                    </div>
 
                     <!-- CTA Button -->
                     <div class="debug-hero-cta-wrapper [animation:fadeSlideIn_1s_ease-out_1.4s_both] animate-on-scroll flex flex-col md:flex-row items-center justify-center gap-6 mb-12 animate">

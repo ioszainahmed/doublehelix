@@ -29,6 +29,7 @@ class App {
         // Main content sections
         this.loader.register('hero', new Hero('hero-container'));
         this.loader.register('mobileReality', new MobileReality('mobile-reality-container'));
+        this.loader.register('ideaToApp', new IdeaToApp('idea-to-app-container'));
         this.loader.register('features', new Features('features-container'));
         this.loader.register('mobileSuite', new MobileSuite('mobile-suite-container'));
         this.loader.register('testimonials', new Testimonials('testimonials-container'));
@@ -147,5 +148,6 @@ if (typeof module !== 'undefined' && module.exports) {
     window.App = App;
     window.app = app;
 }
+
 
 

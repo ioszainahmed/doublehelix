@@ -24,14 +24,14 @@ class Features extends Component {
             },
             cards: [
                 {
-                    title: 'Automation',
-                    description: 'As a license holder requiring confidential assistance, please fill out a support request form or email us.',
-                    link: { label: 'support@nebula.protocol', href: 'mailto:support@nebula.protocol' },
+                    title: 'Priority Support',
+                    description: 'Get dedicated assistance from our engineering team. We respond within hours, not days—so your project never stalls.',
+                    link: { label: 'hello@doublehelix.pro', href: 'mailto:hello@doublehelix.pro' },
                     icon: 'folder'
                 },
                 {
-                    title: 'Identity',
-                    description: 'With your DoubleHelix purchase, you receive 12 months of technical support and direct repository access.',
+                    title: 'Full Source Access',
+                    description: 'Your codebase, your ownership. Every project includes complete source code and private repository access from day one.',
                     icon: 'github'
                 }
             ],
@@ -166,8 +166,16 @@ class Features extends Component {
     onMount() {
         // Initialize the API status card sub-component
         if (typeof APIStatusCard !== 'undefined') {
-            const apiStatusCard = new APIStatusCard('api-status-card');
-            apiStatusCard.mount();
+            this._apiStatusCard = new APIStatusCard('api-status-card');
+            this._apiStatusCard.mount();
+        }
+    }
+
+    onUnmount() {
+        // Clean up sub-component
+        if (this._apiStatusCard) {
+            this._apiStatusCard.unmount();
+            this._apiStatusCard = null;
         }
     }
 }

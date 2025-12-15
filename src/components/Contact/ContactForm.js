@@ -120,14 +120,17 @@ class ContactForm extends Component {
     onMount() {
         const form = document.getElementById('contact-form');
         if (form) {
-            form.addEventListener('submit', this._handleSubmit.bind(this));
+            // Store bound handler reference for proper cleanup
+            this._boundHandleSubmit = this._handleSubmit.bind(this);
+            form.addEventListener('submit', this._boundHandleSubmit);
         }
     }
 
     onUnmount() {
         const form = document.getElementById('contact-form');
-        if (form) {
-            form.removeEventListener('submit', this._handleSubmit.bind(this));
+        if (form && this._boundHandleSubmit) {
+            form.removeEventListener('submit', this._boundHandleSubmit);
+            this._boundHandleSubmit = null;
         }
     }
 
