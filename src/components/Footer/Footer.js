@@ -17,8 +17,8 @@ class Footer extends Component {
         super(containerId, {
             brand: {
                 name: 'DoubleHelix',
-                suffix: 'Now',
-                tagline: 'The unified infrastructure layer for the decentralized web.'
+                suffix: '',
+                tagline: 'Building software that scales. Your vision, engineered.'
             },
             linkColumns: [
                 {
@@ -35,8 +35,7 @@ class Footer extends Component {
                     links: [
                         { label: 'Contact', href: '#' },
                         { label: 'Refund Policy', href: '#' },
-                        { label: "FAQ's", href: '#' },
-                        { label: 'Status', href: '#' }
+                        { label: "FAQ's", href: '#' }
                     ]
                 }
             ],
@@ -46,7 +45,7 @@ class Footer extends Component {
                 { label: 'YouTube', href: '#', icon: 'youtube' },
                 { label: 'Twitter', href: '#', icon: 'twitter' }
             ],
-            copyright: 'Copyright © DoubleHelixNow',
+            copyright: 'Copyright © DoubleHelix',
             ...props
         });
     }
@@ -163,8 +162,7 @@ class Footer extends Component {
                         <p class="text-xs text-zinc-500 font-sans">${copyright}</p>
                         
                         <div class="flex items-center gap-6 md:gap-10">
-                            <a href="#" class="text-xs text-zinc-500 hover:text-white transition-colors font-sans">Terms of Service</a>
-                            ${this._renderDebugToggle()}
+${this._renderDebugToggle()}
                             ${this._renderBackToTop()}
                         </div>
                     </div>

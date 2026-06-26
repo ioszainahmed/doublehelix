@@ -18,7 +18,7 @@ class Features extends Component {
             mainFeature: {
                 title: 'Engineered at the Core',
                 description: [
-                    'A unified API layer that acts as your app\'s DNA.<br>Connecting data, AI, and mobile experiences with precision.',
+                    'A full-service engineering team that designs, builds, and scales your digital product — from architecture to App Store.',
                     'Built for performance today, designed to adapt tomorrow.'
                 ]
             },
@@ -33,6 +33,12 @@ class Features extends Component {
                     title: 'Full Source Access',
                     description: 'Your codebase, your ownership. Every project includes complete source code and private repository access from day one.',
                     icon: 'github'
+                },
+                {
+                    title: 'AI Receptionist',
+                    description: 'Deploy a 24/7 voice AI that answers calls, qualifies leads, books appointments, and hands off to humans when needed. Built on VAPI, n8n, and your existing tools.',
+                    link: { label: 'See it in action →', href: '#ai-receptionist' },
+                    icon: 'voice'
                 }
             ],
             ...props
@@ -67,8 +73,8 @@ class Features extends Component {
                         </div>
                     </div>
 
-                    <!-- API Status Visual -->
-                    <div id="api-status-card" class="debug-api-status relative"></div>
+                    <!-- Feature Visual -->
+                    <div id="feature-visual" class="debug-feature-visual relative"></div>
                 </div>
             </div>
         `;
@@ -86,7 +92,7 @@ class Features extends Component {
                     </div>
                     
                     <!-- Visual composition based on card type -->
-                    ${card.icon === 'folder' ? this._renderMailVisual() : this._renderGithubVisual()}
+                    ${card.icon === 'folder' ? this._renderMailVisual() : card.icon === 'voice' ? this._renderVoiceVisual() : this._renderGithubVisual()}
                 </div>
                 
                 <!-- Card Content -->
@@ -127,6 +133,31 @@ class Features extends Component {
         `;
     }
 
+    _renderVoiceVisual() {
+        return `
+            <div class="flex w-full h-full relative items-center justify-center">
+                <!-- Outer pulse rings -->
+                <div class="absolute w-48 h-48 rounded-full border border-orange-500/10 animate-ping" style="animation-duration:3s"></div>
+                <div class="absolute w-36 h-36 rounded-full border border-orange-500/15 animate-ping" style="animation-duration:2.2s;animation-delay:0.4s"></div>
+                <!-- Waveform bars -->
+                <div class="relative z-10 flex items-center gap-1.5">
+                    ${[3,5,8,12,9,14,10,6,11,8,5,4].map((h, i) => `
+                        <div class="rounded-full bg-gradient-to-t from-orange-600 to-orange-400 w-1.5" style="height:${h * 2}px;animation:wave-bar 1.2s ease-in-out infinite;animation-delay:${i * 0.1}s;opacity:0.85"></div>
+                    `).join('')}
+                </div>
+                <!-- Center mic icon -->
+                <div class="absolute z-20 w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-500/5 border border-orange-500/30 flex items-center justify-center shadow-[0_0_30px_rgba(234,88,12,0.2)] backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                </div>
+            </div>
+        `;
+    }
+
     _renderGithubVisual() {
         return `
             <div class="flex w-full h-full relative perspective-[1000px] items-center justify-center">
@@ -156,7 +187,7 @@ class Features extends Component {
                 ${this._renderMainFeatureCard()}
                 
                 <!-- Bottom Grid Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     ${this._renderSmallCards()}
                 </div>
             </section>

@@ -29,17 +29,8 @@ class Testimonials extends Component {
                     quote: 'DoubleHelix took our concept from napkin sketch to App Store in 8 weeks. The architecture they built handles our 50K daily orders without breaking a sweat. Best decision we made.',
                     author: 'Marcus Chen',
                     role: 'Founder, QuickPantri',
-                    company: 'producthunt'
-                },
-                {
-                    stat: '99.9',
-                    statSuffix: '%',
-                    statColor: 'blue',
-                    description: 'Uptime maintained across peak traffic periods and flash sales.',
-                    quote: 'We launched during Black Friday with zero hiccups. The infrastructure DoubleHelix built scaled automatically when we hit 10x our normal traffic. Their team was on standby the entire time.',
-                    author: 'Rachel Torres',
-                    role: 'VP Digital, Marriott',
-                    company: 'marriott'
+                    company: 'quickpantri',
+                    logo: 'assets/logos/quickpantri.png'
                 },
                 {
                     stat: '47',
@@ -49,7 +40,8 @@ class Testimonials extends Component {
                     quote: 'Our legacy app was bleeding users. DoubleHelix rebuilt it from scratch with a modern stack—load times dropped from 4 seconds to under 400ms. Users actually enjoy opening the app now.',
                     author: 'Daniel Park',
                     role: 'CTO, TacoMex',
-                    company: 'uber'
+                    company: 'tacomex',
+                    logo: 'assets/logos/tacomex.png'
                 }
             ],
             gridCards: [
@@ -60,7 +52,8 @@ class Testimonials extends Component {
                     quote: 'We needed a team that could move fast without cutting corners. DoubleHelix delivered a production-ready app in 6 weeks, complete with real-time sync, offline mode, and a backend that just works.',
                     author: 'Sofia Andersson',
                     role: 'CEO, WanaSell',
-                    company: 'stripe'
+                    company: 'wanasell',
+                    logo: 'assets/logos/wanasell.png'
                 }
             ],
             ...props
@@ -129,8 +122,8 @@ class Testimonials extends Component {
                             <p class="text-xs text-zinc-500 font-sans">${item.role}</p>
                         </div>
                     </div>
-                    <div class="text-zinc-500 opacity-50 group-hover:opacity-100 transition-opacity">
-                        <span class="iconify text-2xl" data-icon="simple-icons:${item.company}"></span>
+                    <div class="opacity-50 group-hover:opacity-100 transition-opacity">
+                        <img src="${item.logo}" alt="${item.company}" class="h-5 w-auto object-contain grayscale brightness-200">
                     </div>
                 </div>
             </div>
@@ -213,8 +206,8 @@ class Testimonials extends Component {
                                             <p class="text-xs text-zinc-500 font-sans">${gridCards[0].role}</p>
                                         </div>
                                     </div>
-                                    <div class="text-zinc-500 opacity-50 group-hover:opacity-100 transition-opacity">
-                                        <span class="iconify text-2xl" data-icon="simple-icons:${gridCards[0].company}"></span>
+                                    <div class="opacity-50 group-hover:opacity-100 transition-opacity">
+                                        <img src="${gridCards[0].logo}" alt="${gridCards[0].company}" class="h-5 w-auto object-contain grayscale brightness-200">
                                     </div>
                                 </div>
                             </div>
