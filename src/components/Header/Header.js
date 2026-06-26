@@ -103,25 +103,25 @@ class Header extends Component {
                             <!-- Strand A (orange) — right curves, front when bulging right -->
                             <!-- Strand B (teal)   — left curves, front when bulging left  -->
                             <!-- Segment 0-8: orange in front -->
-                            <path d="M10 0 Q2 4 10 8"  stroke="rgba(56,189,248,0.35)" stroke-width="1.6" stroke-linecap="round"/>
+                            <path d="M10 0 Q2 4 10 8"  stroke="rgba(41,168,224,0.35)" stroke-width="1.6" stroke-linecap="round"/>
                             <line x1="5.5" y1="2.8" x2="14.5" y2="2.8" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
                             <line x1="5.5" y1="5.2" x2="14.5" y2="5.2" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
-                            <path d="M10 0 Q18 4 10 8"  stroke="#ea580c" stroke-width="1.6" stroke-linecap="round"/>
+                            <path d="M10 0 Q18 4 10 8"  stroke="#d4510a" stroke-width="1.6" stroke-linecap="round"/>
                             <!-- Segment 8-16: teal in front -->
-                            <path d="M10 8 Q18 12 10 16" stroke="rgba(234,88,12,0.32)" stroke-width="1.6" stroke-linecap="round"/>
+                            <path d="M10 8 Q18 12 10 16" stroke="rgba(212,81,10,0.32)" stroke-width="1.6" stroke-linecap="round"/>
                             <line x1="5.5" y1="10.8" x2="14.5" y2="10.8" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
                             <line x1="5.5" y1="13.2" x2="14.5" y2="13.2" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
-                            <path d="M10 8 Q2 12 10 16"  stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round"/>
+                            <path d="M10 8 Q2 12 10 16"  stroke="#29a8e0" stroke-width="1.6" stroke-linecap="round"/>
                             <!-- Segment 16-24: orange in front -->
-                            <path d="M10 16 Q2 20 10 24" stroke="rgba(56,189,248,0.35)" stroke-width="1.6" stroke-linecap="round"/>
+                            <path d="M10 16 Q2 20 10 24" stroke="rgba(41,168,224,0.35)" stroke-width="1.6" stroke-linecap="round"/>
                             <line x1="5.5" y1="18.8" x2="14.5" y2="18.8" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
                             <line x1="5.5" y1="21.2" x2="14.5" y2="21.2" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
-                            <path d="M10 16 Q18 20 10 24" stroke="#ea580c" stroke-width="1.6" stroke-linecap="round"/>
+                            <path d="M10 16 Q18 20 10 24" stroke="#d4510a" stroke-width="1.6" stroke-linecap="round"/>
                             <!-- Segment 24-32: teal in front -->
-                            <path d="M10 24 Q18 28 10 32" stroke="rgba(234,88,12,0.32)" stroke-width="1.6" stroke-linecap="round"/>
+                            <path d="M10 24 Q18 28 10 32" stroke="rgba(212,81,10,0.32)" stroke-width="1.6" stroke-linecap="round"/>
                             <line x1="5.5" y1="26.8" x2="14.5" y2="26.8" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
                             <line x1="5.5" y1="29.2" x2="14.5" y2="29.2" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
-                            <path d="M10 24 Q2 28 10 32"  stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round"/>
+                            <path d="M10 24 Q2 28 10 32"  stroke="#29a8e0" stroke-width="1.6" stroke-linecap="round"/>
                         </svg>
                         <!-- Two-strand brand name: orange "Double" + teal "Helix" -->
                         <span class="text-base font-medium tracking-tight font-sans leading-none">

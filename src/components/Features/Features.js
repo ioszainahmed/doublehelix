@@ -87,9 +87,9 @@ class Features extends Component {
             // GitHub card uses teal (strand B) accent; others use default
             const isGithub = card.icon === 'github';
             const borderGradient = isGithub
-                ? 'linear-gradient(135deg, rgba(56,189,248,0.35), rgba(56,189,248,0), rgba(56,189,248,0.2))'
+                ? 'linear-gradient(135deg, rgba(41,168,224,0.35), rgba(41,168,224,0), rgba(41,168,224,0.2))'
                 : 'linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1))';
-            const linkColor = isGithub ? 'text-[#38BDF8] hover:border-[#38BDF8]/50' : 'text-orange-400 hover:border-orange-400/50';
+            const linkColor = isGithub ? 'text-[#29a8e0] hover:border-[#29a8e0]/50' : 'text-orange-400 hover:border-orange-400/50';
 
             return `
             <div class="debug-feature-card group overflow-hidden flex flex-col hover:border-white/20 transition-colors duration-500 bg-gradient-to-br from-white/5 to-white/0 rounded-[2rem] backdrop-blur-lg" style="position: relative; --border-gradient: ${borderGradient}; --border-radius-before: 2rem">
@@ -155,7 +155,7 @@ class Features extends Component {
                     `).join('')}
                 </div>
                 <!-- Center mic icon -->
-                <div class="absolute z-20 w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-500/5 border border-orange-500/30 flex items-center justify-center shadow-[0_0_30px_rgba(234,88,12,0.2)] backdrop-blur-sm">
+                <div class="absolute z-20 w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-500/5 border border-orange-500/30 flex items-center justify-center shadow-[0_0_30px_rgba(212,81,10,0.2)] backdrop-blur-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                         <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
@@ -170,18 +170,18 @@ class Features extends Component {
     _renderGithubVisual() {
         return `
             <div class="flex w-full h-full relative perspective-[1000px] items-center justify-center">
-                <div class="absolute w-[260px] h-[260px] border border-dashed border-[#38BDF8]/10 rounded-full flex items-center justify-center opacity-60">
-                    <div class="absolute -top-3 bg-zinc-900 border border-[#38BDF8]/20 px-2 py-0.5 rounded-full flex items-center gap-1.5 shadow-lg z-10">
+                <div class="absolute w-[260px] h-[260px] border border-dashed border-[#29a8e0]/10 rounded-full flex items-center justify-center opacity-60">
+                    <div class="absolute -top-3 bg-zinc-900 border border-[#29a8e0]/20 px-2 py-0.5 rounded-full flex items-center gap-1.5 shadow-lg z-10">
                         <span class="relative flex h-1.5 w-1.5">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38BDF8] opacity-75"></span>
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#29a8e0] opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#0EA5E9]"></span>
                         </span>
                         <span class="text-[9px] font-mono text-zinc-400 tracking-tight">active</span>
                     </div>
                 </div>
-                <div class="absolute w-40 h-40 border border-dashed border-[#38BDF8]/15 rounded-full"></div>
-                <div class="relative z-20 w-16 h-16 bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-2xl border border-[#38BDF8]/20 shadow-[0_0_40px_-10px_rgba(56,189,248,0.2)] flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="1.5" opacity="0.9">
+                <div class="absolute w-40 h-40 border border-dashed border-[#29a8e0]/15 rounded-full"></div>
+                <div class="relative z-20 w-16 h-16 bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-2xl border border-[#29a8e0]/20 shadow-[0_0_40px_-10px_rgba(41,168,224,0.2)] flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#29a8e0" stroke-width="1.5" opacity="0.9">
                         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
                         <path d="M9 18c-4.51 2-5-2-7-2"></path>
                     </svg>

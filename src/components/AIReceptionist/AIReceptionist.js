@@ -47,7 +47,7 @@ class AIReceptionist extends Component {
         };
 
         return this.props.capabilities.map((cap, i) => `
-            <div class="group flex flex-col gap-5 bg-gradient-to-br from-white/5 to-white/0 rounded-[1.75rem] p-8 transition-all duration-300 hover:from-white/8 hover:shadow-[0_0_40px_-10px_rgba(234,88,12,0.15)]" style="position:relative;--border-gradient:linear-gradient(135deg,rgba(255,255,255,0.15),rgba(255,255,255,0),rgba(255,255,255,0.08));--border-radius-before:1.75rem">
+            <div class="group flex flex-col gap-5 bg-gradient-to-br from-white/5 to-white/0 rounded-[1.75rem] p-8 transition-all duration-300 hover:from-white/8 hover:shadow-[0_0_40px_-10px_rgba(212,81,10,0.15)]" style="position:relative;--border-gradient:linear-gradient(135deg,rgba(255,255,255,0.15),rgba(255,255,255,0),rgba(255,255,255,0.08));--border-radius-before:1.75rem">
                 <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-500/5 border border-orange-500/20 flex items-center justify-center group-hover:border-orange-500/40 transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                         ${icons[cap.icon]}
@@ -116,7 +116,7 @@ class AIReceptionist extends Component {
 
                             <!-- CTA -->
                             <div class="flex items-center gap-4">
-                                <a href="${cta.href}" class="group inline-flex items-center gap-2 uppercase transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(234,88,12,0.3)] text-xs font-medium text-white tracking-widest bg-orange-500 hover:bg-orange-400 rounded-full pt-3.5 pr-8 pb-3.5 pl-8">
+                                <a href="${cta.href}" class="group inline-flex items-center gap-2 uppercase transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(212,81,10,0.3)] text-xs font-medium text-white tracking-widest bg-[#d4510a] hover:bg-[#c04509] rounded-full pt-3.5 pr-8 pb-3.5 pl-8">
                                     <span>${cta.label}</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-0.5">
                                         <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
