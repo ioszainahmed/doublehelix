@@ -303,3 +303,26 @@
 
 
 
+
+/* DoubleHelix Brand Identity */
+
+/* Nav logo helix mark — subtle entrance on load */
+.dh-logo-mark {
+    animation: fadeSlideIn 0.8s ease-out 0.3s both;
+}
+
+/* Large hero background helix motif */
+.dh-helix-bg {
+    animation: helix-drift 12s ease-in-out infinite;
+    will-change: transform, opacity;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Two-strand brand name: Double (orange, strand A) + Helix (teal, strand B) */
+.dh-brand-double {
+    color: #ea580c;
+}
+.dh-brand-helix {
+    color: #38BDF8;
+}

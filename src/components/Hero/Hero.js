@@ -151,6 +151,50 @@ class Hero extends Component {
                 <div class="debug-hero-bg absolute inset-0 -z-20">
                     <div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[120%] h-[80%] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-zinc-900/20 to-black"></div>
                     <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+
+                    <!-- Large decorative helix — orange strand A + teal strand B -->
+                    <svg class="dh-helix-bg absolute right-[8%] top-[12%] hidden lg:block" width="220" height="520" viewBox="0 0 20 32" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- Segment 0-8: orange in front -->
+                        <path d="M10 0 Q2 4 10 8"   stroke="rgba(56,189,248,0.4)"  stroke-width="0.6" stroke-linecap="round"/>
+                        <line x1="5.5" y1="2.8"  x2="14.5" y2="2.8"  stroke="rgba(255,255,255,0.18)" stroke-width="0.35"/>
+                        <line x1="5.5" y1="5.2"  x2="14.5" y2="5.2"  stroke="rgba(255,255,255,0.18)" stroke-width="0.35"/>
+                        <path d="M10 0 Q18 4 10 8"   stroke="#ea580c"              stroke-width="0.6" stroke-linecap="round"/>
+                        <!-- Segment 8-16: teal in front -->
+                        <path d="M10 8 Q18 12 10 16"  stroke="rgba(234,88,12,0.35)" stroke-width="0.6" stroke-linecap="round"/>
+                        <line x1="5.5" y1="10.8" x2="14.5" y2="10.8" stroke="rgba(255,255,255,0.18)" stroke-width="0.35"/>
+                        <line x1="5.5" y1="13.2" x2="14.5" y2="13.2" stroke="rgba(255,255,255,0.18)" stroke-width="0.35"/>
+                        <path d="M10 8 Q2 12 10 16"   stroke="#38BDF8"              stroke-width="0.6" stroke-linecap="round"/>
+                        <!-- Segment 16-24: orange in front -->
+                        <path d="M10 16 Q2 20 10 24"  stroke="rgba(56,189,248,0.4)"  stroke-width="0.6" stroke-linecap="round"/>
+                        <line x1="5.5" y1="18.8" x2="14.5" y2="18.8" stroke="rgba(255,255,255,0.18)" stroke-width="0.35"/>
+                        <line x1="5.5" y1="21.2" x2="14.5" y2="21.2" stroke="rgba(255,255,255,0.18)" stroke-width="0.35"/>
+                        <path d="M10 16 Q18 20 10 24" stroke="#ea580c"              stroke-width="0.6" stroke-linecap="round"/>
+                        <!-- Segment 24-32: teal in front -->
+                        <path d="M10 24 Q18 28 10 32" stroke="rgba(234,88,12,0.35)" stroke-width="0.6" stroke-linecap="round"/>
+                        <line x1="5.5" y1="26.8" x2="14.5" y2="26.8" stroke="rgba(255,255,255,0.18)" stroke-width="0.35"/>
+                        <line x1="5.5" y1="29.2" x2="14.5" y2="29.2" stroke="rgba(255,255,255,0.18)" stroke-width="0.35"/>
+                        <path d="M10 24 Q2 28 10 32"  stroke="#38BDF8"              stroke-width="0.6" stroke-linecap="round"/>
+                    </svg>
+
+                    <!-- Mirror helix left — dimmer, phase-offset -->
+                    <svg class="dh-helix-bg absolute left-[6%] bottom-[15%] hidden lg:block" width="120" height="280" viewBox="0 0 20 32" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="animation-delay: -4s; opacity: 0.55;">
+                        <path d="M10 0 Q2 4 10 8"    stroke="rgba(56,189,248,0.22)"  stroke-width="0.7" stroke-linecap="round"/>
+                        <line x1="5.5" y1="2.8"  x2="14.5" y2="2.8"  stroke="rgba(255,255,255,0.1)" stroke-width="0.35"/>
+                        <line x1="5.5" y1="5.2"  x2="14.5" y2="5.2"  stroke="rgba(255,255,255,0.1)" stroke-width="0.35"/>
+                        <path d="M10 0 Q18 4 10 8"   stroke="rgba(234,88,12,0.4)"  stroke-width="0.7" stroke-linecap="round"/>
+                        <path d="M10 8 Q18 12 10 16"  stroke="rgba(234,88,12,0.22)"  stroke-width="0.7" stroke-linecap="round"/>
+                        <line x1="5.5" y1="10.8" x2="14.5" y2="10.8" stroke="rgba(255,255,255,0.1)" stroke-width="0.35"/>
+                        <line x1="5.5" y1="13.2" x2="14.5" y2="13.2" stroke="rgba(255,255,255,0.1)" stroke-width="0.35"/>
+                        <path d="M10 8 Q2 12 10 16"   stroke="rgba(56,189,248,0.4)"  stroke-width="0.7" stroke-linecap="round"/>
+                        <path d="M10 16 Q2 20 10 24"  stroke="rgba(56,189,248,0.22)"  stroke-width="0.7" stroke-linecap="round"/>
+                        <line x1="5.5" y1="18.8" x2="14.5" y2="18.8" stroke="rgba(255,255,255,0.1)" stroke-width="0.35"/>
+                        <line x1="5.5" y1="21.2" x2="14.5" y2="21.2" stroke="rgba(255,255,255,0.1)" stroke-width="0.35"/>
+                        <path d="M10 16 Q18 20 10 24" stroke="rgba(234,88,12,0.4)"  stroke-width="0.7" stroke-linecap="round"/>
+                        <path d="M10 24 Q18 28 10 32" stroke="rgba(234,88,12,0.22)"  stroke-width="0.7" stroke-linecap="round"/>
+                        <line x1="5.5" y1="26.8" x2="14.5" y2="26.8" stroke="rgba(255,255,255,0.1)" stroke-width="0.35"/>
+                        <line x1="5.5" y1="29.2" x2="14.5" y2="29.2" stroke="rgba(255,255,255,0.1)" stroke-width="0.35"/>
+                        <path d="M10 24 Q2 28 10 32"  stroke="rgba(56,189,248,0.4)"  stroke-width="0.7" stroke-linecap="round"/>
+                    </svg>
                 </div>
 
                 <!-- Grid/Curtain Structure -->
@@ -183,12 +227,25 @@ class Hero extends Component {
                     
                     ${this._renderHeadline()}
 
-                    <!-- Subtext -->
+                    <!-- Subtext — two-strand system: orange (A) + teal (B) -->
                     <div class="debug-hero-subtitle [animation:fadeSlideIn_1s_ease-out_1.2s_both] animate-on-scroll max-w-3xl mr-auto mb-12 ml-auto animate">
-                        <p class="leading-relaxed text-2xl md:text-3xl text-gray-400 tracking-normal font-manrope font-medium mb-4">
+                        <!-- Strand A -->
+                        <p class="leading-relaxed text-2xl md:text-3xl text-gray-300 tracking-normal font-manrope font-medium mb-5">
                             ${subtitleMain}
                         </p>
-                        <p class="leading-relaxed text-base md:text-lg text-gray-500 tracking-normal font-manrope px-6 md:px-12">
+                        <!-- Helix divider between the two strands -->
+                        <div class="flex items-center justify-center gap-3 mb-5 opacity-40">
+                            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-orange-500/50 to-transparent max-w-[80px]"></div>
+                            <svg width="48" height="12" viewBox="0 0 48 12" fill="none" aria-hidden="true">
+                                <path d="M0,6 C6,1 12,1 18,6 C24,11 30,11 36,6 C42,1 48,1 48,6" stroke="#ea580c" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.8"/>
+                                <path d="M0,6 C6,11 12,11 18,6 C24,1 30,1 36,6 C42,11 48,11 48,6" stroke="#38BDF8" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.8"/>
+                                <line x1="12" y1="2.5" x2="12" y2="9.5" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+                                <line x1="36" y1="2.5" x2="36" y2="9.5" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+                            </svg>
+                            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-[#38BDF8]/50 to-transparent max-w-[80px]"></div>
+                        </div>
+                        <!-- Strand B -->
+                        <p class="leading-relaxed text-base md:text-lg tracking-normal font-manrope px-6 md:px-12" style="color: rgba(56,189,248,0.65);">
                             ${subtitleSecondary}
                         </p>
                     </div>

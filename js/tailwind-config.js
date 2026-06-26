@@ -15,7 +15,13 @@
     tailwind.config = {
         theme: {
             extend: {
-                // Add any custom theme extensions here if needed
+                colors: {
+                    helix: {
+                        300: '#7DD3FC',
+                        400: '#38BDF8',
+                        500: '#0EA5E9',
+                    }
+                }
             }
         },
         plugins: [

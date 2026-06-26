@@ -135,3 +135,19 @@
 
 
 
+
+/* Helix slow drift — hero background motif */
+@keyframes helix-drift {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.045;
+    }
+    33% {
+        transform: translateY(-18px) rotate(0.8deg);
+        opacity: 0.065;
+    }
+    66% {
+        transform: translateY(12px) rotate(-0.5deg);
+        opacity: 0.04;
+    }
+}

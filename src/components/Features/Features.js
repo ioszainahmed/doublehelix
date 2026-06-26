@@ -83,18 +83,26 @@ class Features extends Component {
     _renderSmallCards() {
         const { cards } = this.props;
         
-        return cards.map(card => `
-            <div class="debug-feature-card group overflow-hidden flex flex-col hover:border-white/20 transition-colors duration-500 bg-gradient-to-br from-white/5 to-white/0 rounded-[2rem] backdrop-blur-lg" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)); --border-radius-before: 2rem">
+        return cards.map(card => {
+            // GitHub card uses teal (strand B) accent; others use default
+            const isGithub = card.icon === 'github';
+            const borderGradient = isGithub
+                ? 'linear-gradient(135deg, rgba(56,189,248,0.35), rgba(56,189,248,0), rgba(56,189,248,0.2))'
+                : 'linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1))';
+            const linkColor = isGithub ? 'text-[#38BDF8] hover:border-[#38BDF8]/50' : 'text-orange-400 hover:border-orange-400/50';
+
+            return `
+            <div class="debug-feature-card group overflow-hidden flex flex-col hover:border-white/20 transition-colors duration-500 bg-gradient-to-br from-white/5 to-white/0 rounded-[2rem] backdrop-blur-lg" style="position: relative; --border-gradient: ${borderGradient}; --border-radius-before: 2rem">
                 <!-- Visual Header with floating widgets -->
                 <div class="flex overflow-hidden bg-gradient-to-b from-white/[0.03] to-transparent h-64 relative items-center justify-center" style="mask-image: linear-gradient(180deg, transparent, black 0%, black 90%, transparent);">
                     <div class="overflow-hidden bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.07] via-transparent to-transparent opacity-50 absolute inset-0">
                         <div class="[mask-image:radial-gradient(circle_at_center,black_40%,transparent_100%)] opacity-30 absolute inset-0" style="background-image: radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 20px 20px"></div>
                     </div>
-                    
+
                     <!-- Visual composition based on card type -->
                     ${card.icon === 'folder' ? this._renderMailVisual() : card.icon === 'voice' ? this._renderVoiceVisual() : this._renderGithubVisual()}
                 </div>
-                
+
                 <!-- Card Content -->
                 <div class="mt-auto pt-8 pr-10 pb-10 pl-10">
                     <div class="flex items-center gap-3 mb-5">
@@ -104,13 +112,14 @@ class Features extends Component {
                         ${card.description}
                     </p>
                     ${card.link ? `
-                        <a href="${card.link.href}" class="inline-flex items-center gap-2 text-orange-400 hover:text-white transition-colors text-sm font-medium font-sans pb-1 border-b border-transparent hover:border-orange-400/50">
+                        <a href="${card.link.href}" class="inline-flex items-center gap-2 ${linkColor} transition-colors text-sm font-medium font-sans pb-1 border-b border-transparent">
                             ${card.link.label}
                         </a>
                     ` : ''}
                 </div>
             </div>
-        `).join('');
+        `;
+        }).join('');
     }
 
     _renderMailVisual() {
@@ -161,18 +170,18 @@ class Features extends Component {
     _renderGithubVisual() {
         return `
             <div class="flex w-full h-full relative perspective-[1000px] items-center justify-center">
-                <div class="absolute w-[260px] h-[260px] border border-dashed border-white/5 rounded-full flex items-center justify-center opacity-60">
-                    <div class="absolute -top-3 bg-zinc-900 border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5 shadow-lg z-10">
+                <div class="absolute w-[260px] h-[260px] border border-dashed border-[#38BDF8]/10 rounded-full flex items-center justify-center opacity-60">
+                    <div class="absolute -top-3 bg-zinc-900 border border-[#38BDF8]/20 px-2 py-0.5 rounded-full flex items-center gap-1.5 shadow-lg z-10">
                         <span class="relative flex h-1.5 w-1.5">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38BDF8] opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#0EA5E9]"></span>
                         </span>
                         <span class="text-[9px] font-mono text-zinc-400 tracking-tight">active</span>
                     </div>
                 </div>
-                <div class="absolute w-40 h-40 border border-dashed border-white/10 rounded-full"></div>
-                <div class="relative z-20 w-16 h-16 bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-2xl border border-white/10 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)] flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/90">
+                <div class="absolute w-40 h-40 border border-dashed border-[#38BDF8]/15 rounded-full"></div>
+                <div class="relative z-20 w-16 h-16 bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-2xl border border-[#38BDF8]/20 shadow-[0_0_40px_-10px_rgba(56,189,248,0.2)] flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="1.5" opacity="0.9">
                         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
                         <path d="M9 18c-4.51 2-5-2-7-2"></path>
                     </svg>
