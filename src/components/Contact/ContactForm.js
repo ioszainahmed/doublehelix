@@ -17,12 +17,12 @@ class ContactForm extends Component {
         super(containerId, {
             title: 'Ready to scale your',
             titleHighlight: 'app?',
-            subtitle: 'Our service is for protocols that believe in owning a safe, scalable, and decentralized blockspace. We promise that scaling with DoubleHelix will help you declutter your mempool.',
+            subtitle: 'Tell us about your project. Whether you\'re starting from scratch or scaling an existing product, we\'d love to hear from you.',
             submitText: 'Submit Request',
             fields: [
                 { id: 'name', label: 'Name', type: 'text', required: true, half: true },
                 { id: 'email', label: 'Email', type: 'email', required: true, half: true },
-                { id: 'project', label: 'Project / Protocol ID', type: 'text', required: false },
+                { id: 'project', label: 'Project / Company', type: 'text', required: false },
                 { id: 'message', label: 'Anything we should know?', type: 'textarea', required: false }
             ],
             ...props

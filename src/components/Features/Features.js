@@ -18,7 +18,7 @@ class Features extends Component {
             mainFeature: {
                 title: 'Engineered at the Core',
                 description: [
-                    'A unified API layer that acts as your app\'s DNA.<br>Connecting data, AI, and mobile experiences with precision.',
+                    'A full-service engineering team that designs, builds, and scales your digital product — from architecture to App Store.',
                     'Built for performance today, designed to adapt tomorrow.'
                 ]
             },
@@ -73,8 +73,8 @@ class Features extends Component {
                         </div>
                     </div>
 
-                    <!-- API Status Visual -->
-                    <div id="api-status-card" class="debug-api-status relative"></div>
+                    <!-- Feature Visual -->
+                    <div id="feature-visual" class="debug-feature-visual relative"></div>
                 </div>
             </div>
         `;

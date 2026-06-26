@@ -21,22 +21,19 @@ class MobileSuite extends Component {
                 line3: 'Book &',
                 highlight: 'Convert'
             },
-            phoneData: {
-                balance: '$8,245.32',
-                change: '+12.4%',
-                period: 'this week'
-            },
-            stats: {
-                uptime: '99.99%',
-                latency: '14ms',
-                requests: '2.4M'
+            agentStats: {
+                conversations: '1,247',
+                change: '+34.2%',
+                period: 'vs last month',
+                resolved: '94.2%',
+                avgReply: '1.3s',
+                booked: '28'
             },
             ...props
         });
     }
 
     _renderPhoneMockup() {
-        const { phoneData } = this.props;
         
         return `
             <div class="lg:col-span-4 flex order-1 lg:order-2 lg:py-0 pt-12 pb-12 relative justify-center">
@@ -83,7 +80,7 @@ class MobileSuite extends Component {
                             </button>
                             <div class="flex items-center gap-2">
                                 <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)] animate-pulse"></div>
-                                <span class="text-sm font-semibold text-white">DoubleHelix Core</span>
+                                <span class="text-sm font-semibold text-white">AI Receptionist</span>
                             </div>
                             <button class="flex text-white/70 bg-gradient-to-br from-white/10 to-white/0 w-8 h-8 rounded-full items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -94,19 +91,20 @@ class MobileSuite extends Component {
                             </button>
                         </div>
 
-                        <!-- Balance -->
-                        <div class="text-center mb-4">
-                            <p class="text-[10px] font-semibold text-zinc-500 uppercase tracking-widest mb-2">Total Volume</p>
-                            <h4 class="text-5xl font-medium text-white tracking-tighter font-geist">${phoneData.balance}</h4>
-                            <div class="flex gap-1.5 mt-2 items-center justify-center">
-                                <div class="flex items-center text-emerald-500 bg-emerald-500/10 px-1.5 py-0.5 rounded text-[10px] font-semibold border border-emerald-500/20">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="mr-1">
-                                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                                        <polyline points="16 7 22 7 22 13"></polyline>
-                                    </svg>
-                                    ${phoneData.change}
+                        <!-- Chat Messages -->
+                        <div class="flex flex-col gap-3 mb-3">
+                            <div class="flex items-start gap-2">
+                                <div class="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="text-orange-400"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5A2.5 2.5 0 0 0 7.5 18A2.5 2.5 0 0 0 10 15.5A2.5 2.5 0 0 0 7.5 13m9 0A2.5 2.5 0 0 0 14 15.5a2.5 2.5 0 0 0 2.5 2.5a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 16.5 13z"/></svg>
                                 </div>
-                                <span class="text-xs text-zinc-500 font-medium">${phoneData.period}</span>
+                                <div class="bg-zinc-800/80 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[75%]">
+                                    <p class="text-[11px] text-white leading-relaxed">Hey 👋 I'm your AI receptionist. How can I help you today?</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="bg-orange-500 rounded-2xl rounded-tr-sm px-3 py-2 max-w-[70%]">
+                                    <p class="text-[11px] text-white leading-relaxed">I need help building a mobile app</p>
+                                </div>
                             </div>
                         </div>
 
@@ -121,115 +119,60 @@ class MobileSuite extends Component {
 
     _renderChart() {
         return `
-            <div class="w-full h-40 mb-6 relative">
-                <svg class="w-full h-full overflow-visible" viewBox="0 0 280 120" preserveAspectRatio="none">
-                    <defs>
-                        <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#f97316" stop-opacity="0.3"/>
-                            <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
-                        </linearGradient>
-                        <pattern id="grid" width="40" height="120" patternUnits="userSpaceOnUse">
-                            <line x1="0" y1="0" x2="0" y2="120" stroke="#3f3f46" stroke-width="1" stroke-dasharray="2 2" opacity="0.3"></line>
-                        </pattern>
-                    </defs>
-                    
-                    <rect width="100%" height="100%" fill="url(#grid)"></rect>
-                    <line x1="0" y1="120" x2="280" y2="120" stroke="#3f3f46" stroke-width="1" opacity="0.5"></line>
-                    <path d="M0,80 C20,80 30,60 50,65 C70,70 80,90 100,85 C120,80 130,40 150,45 C170,50 180,70 200,60 C220,50 230,20 250,25 C265,28 275,10 280,15 V120 H0 Z" fill="url(#chartGradient)"></path>
-                    <path d="M0,80 C20,80 30,60 50,65 C70,70 80,90 100,85 C120,80 130,40 150,45 C170,50 180,70 200,60 C220,50 230,20 250,25 C265,28 275,10 280,15" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round"></path>
-                    <g transform="translate(150, 45)">
-                        <circle r="4" fill="#18181b" stroke="#f97316" stroke-width="2" class="animate-pulse"></circle>
-                        <line x1="0" y1="4" x2="0" y2="75" stroke="#f97316" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"></line>
-                    </g>
-                </svg>
-                <div class="flex pt-2 pr-2 pl-2 justify-between">
-                    <button class="text-[9px] font-semibold text-zinc-600 hover:text-white">1H</button>
-                    <button class="text-[9px] font-semibold text-zinc-600 hover:text-white">1D</button>
-                    <button class="text-[9px] font-semibold text-orange-500 bg-orange-500/10 rounded px-2 py-0.5 border border-orange-500/20">1W</button>
-                    <button class="text-[9px] font-semibold text-zinc-600 hover:text-white">1M</button>
-                    <button class="text-[9px] font-semibold text-zinc-600 hover:text-white">1Y</button>
+            <div class="flex flex-col gap-3 mb-3">
+                <div class="flex items-start gap-2">
+                    <div class="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="text-orange-400"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5A2.5 2.5 0 0 0 7.5 18A2.5 2.5 0 0 0 10 15.5A2.5 2.5 0 0 0 7.5 13m9 0A2.5 2.5 0 0 0 14 15.5a2.5 2.5 0 0 0 2.5 2.5a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 16.5 13z"/></svg>
+                    </div>
+                    <div class="bg-zinc-800/80 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[75%]">
+                        <p class="text-[11px] text-white leading-relaxed">Great choice! What industry are you building for?</p>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bg-orange-500 rounded-2xl rounded-tr-sm px-3 py-2 max-w-[70%]">
+                        <p class="text-[11px] text-white leading-relaxed">E-commerce, we need iOS & Android</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-2">
+                    <div class="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="text-orange-400"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5A2.5 2.5 0 0 0 7.5 18A2.5 2.5 0 0 0 10 15.5A2.5 2.5 0 0 0 7.5 13m9 0A2.5 2.5 0 0 0 14 15.5a2.5 2.5 0 0 0 2.5 2.5a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 16.5 13z"/></svg>
+                    </div>
+                    <div class="bg-zinc-800/80 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[75%]">
+                        <p class="text-[11px] text-white leading-relaxed">Perfect, we've shipped 10+ e-commerce apps. I'll book you with our team 🚀</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-2">
+                    <div class="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="text-orange-400"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5A2.5 2.5 0 0 0 7.5 18A2.5 2.5 0 0 0 10 15.5A2.5 2.5 0 0 0 7.5 13m9 0A2.5 2.5 0 0 0 14 15.5a2.5 2.5 0 0 0 2.5 2.5a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 16.5 13z"/></svg>
+                    </div>
+                    <div class="bg-zinc-800/80 rounded-2xl rounded-tl-sm px-3 py-2">
+                        <div class="flex gap-1 items-center">
+                            <div class="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-bounce" style="animation-delay:0ms"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-bounce" style="animation-delay:150ms"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-bounce" style="animation-delay:300ms"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
     }
 
     _renderActionButtons() {
-        return `
-            <div class="grid grid-cols-3 mt-4 mb-8 gap-3">
-                <button class="flex flex-col gap-2 group items-center">
-                    <div class="flex shadow-[0_0_20px_-5px_rgba(249,115,22,0.4)] text-white bg-gradient-to-b from-orange-400 to-orange-600 w-12 h-12 rounded-xl items-center justify-center border border-white/10">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
-                            <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10" opacity=".5"></path>
-                            <path d="M8.47 13.53a.75.75 0 1 1 1.06-1.06l1.72 1.72V8a.75.75 0 0 1 1.5 0v6.19l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0z"></path>
-                        </svg>
-                    </div>
-                    <span class="text-[10px] font-medium text-zinc-400">Deposit</span>
-                </button>
-                <button class="flex flex-col items-center gap-2 group">
-                    <div class="flex text-white bg-gradient-to-br from-white/10 to-white/0 w-12 h-12 rounded-xl items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
-                            <path d="M10.875 4a.75.75 0 0 0-1.272-.538l-4.125 4a.75.75 0 0 0 0 1.076l4.125 4A.75.75 0 0 0 10.875 12V8.75H18a.75.75 0 0 0 0-1.5h-7.125z"></path>
-                            <path d="M13.125 12a.75.75 0 0 1 1.272-.538l4.125 4a.75.75 0 0 1 0 1.076l-4.125 4A.75.75 0 0 1 13.125 20v-3.25H6a.75.75 0 0 1 0-1.5h7.125z" opacity=".5"></path>
-                        </svg>
-                    </div>
-                    <span class="text-[10px] font-medium text-zinc-400">Swap</span>
-                </button>
-                <button class="flex flex-col items-center gap-2 group">
-                    <div class="flex text-white bg-gradient-to-br from-white/10 to-white/0 w-12 h-12 rounded-xl items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
-                            <path fill-rule="evenodd" d="M10 22h4c3.771 0 5.657 0 6.828-1.172S22 17.771 22 14v-.437c0-.873 0-1.529-.043-2.063h-4.052c-1.097 0-2.067 0-2.848-.105c-.847-.114-1.694-.375-2.385-1.066c-.692-.692-.953-1.539-1.067-2.386c-.105-.781-.105-1.75-.105-2.848l.01-2.834q0-.124.02-.244C11.121 2 10.636 2 10.03 2C6.239 2 4.343 2 3.172 3.172C2 4.343 2 6.229 2 10v4c0 3.771 0 5.657 1.172 6.828S6.229 22 10 22" clip-rule="evenodd" opacity=".5"></path>
-                            <path d="M7.987 12.953a.75.75 0 0 1 1.026 0l2 1.875a.75.75 0 0 1-1.026 1.094l-.737-.69V18.5a.75.75 0 0 1-1.5 0v-3.269l-.737.691a.75.75 0 0 1-1.026-1.094z"></path>
-                        </svg>
-                    </div>
-                    <span class="text-[10px] font-medium text-zinc-400">Send</span>
-                </button>
-            </div>
-        `;
+        return '';
     }
 
     _renderBottomSheet() {
         return `
-            <div class="flex-1 bg-zinc-900/60 rounded-t-[2rem] -mx-6 px-6 pt-6 pb-4 backdrop-blur-md border-t border-white/5">
-                <div class="flex items-center justify-between mb-4">
-                    <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Active Nodes</p>
+            <div class="flex-1 bg-zinc-900/60 rounded-t-[2rem] -mx-6 px-5 pt-4 pb-4 backdrop-blur-md border-t border-white/5">
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <button class="text-[10px] font-medium text-white bg-white/10 border border-white/10 rounded-full px-3 py-1.5 hover:bg-orange-500/20 hover:border-orange-500/30 transition-colors">Book a Call</button>
+                    <button class="text-[10px] font-medium text-white bg-white/10 border border-white/10 rounded-full px-3 py-1.5 hover:bg-white/20 transition-colors">See Our Work</button>
+                    <button class="text-[10px] font-medium text-white bg-white/10 border border-white/10 rounded-full px-3 py-1.5 hover:bg-white/20 transition-colors">Get a Quote</button>
                 </div>
-                <div class="space-y-3">
-                    <div class="flex hover:bg-white/[0.04] cursor-pointer group bg-gradient-to-br from-white/10 to-white/0 rounded-xl px-3 py-3 items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center border border-indigo-500/20">
-                                <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-indigo-400">
-                                    <path fill="currentColor" d="M11.944 17.97L4.58 13.62L11.943 24l7.37-10.38l-7.372 4.35zM12.056 0L4.69 12.223l7.365 4.354l7.365-4.35z"></path>
-                                </svg>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-xs font-semibold text-white">Ethereum Mainnet</span>
-                                <span class="text-[10px] text-emerald-500 font-medium flex items-center gap-1">
-                                    <span class="w-1 h-1 rounded-full bg-emerald-500"></span> Synced
-                                </span>
-                            </div>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-zinc-600">
-                            <path d="m9 18 6-6-6-6"></path>
-                        </svg>
-                    </div>
-                    
-                    <div class="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 cursor-pointer group">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/20">
-                                <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-purple-400">
-                                    <path fill="currentColor" d="m23.876 18.031l-3.962 4.14a.9.9 0 0 1-.306.21a.9.9 0 0 1-.367.074H.46a.47.47 0 0 1-.252-.073a.45.45 0 0 1-.17-.196a.44.44 0 0 1-.031-.255a.44.44 0 0 1 .117-.23l3.965-4.139a.9.9 0 0 1 .305-.21a.9.9 0 0 1 .366-.075h18.78a.47.47 0 0 1 .252.074a.45.45 0 0 1 .17.196a.44.44 0 0 1 .031.255a.44.44 0 0 1-.117.23z"></path>
-                                </svg>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-xs font-semibold text-white">Solana RPC</span>
-                                <span class="text-[10px] text-orange-400 font-medium flex items-center gap-1">
-                                    <span class="w-1 h-1 rounded-full bg-orange-400 animate-pulse"></span> Connecting...
-                                </span>
-                            </div>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-zinc-600">
-                            <path d="m9 18 6-6-6-6"></path>
-                        </svg>
+                <div class="flex items-center gap-2 bg-zinc-800/50 rounded-2xl px-3 py-2 border border-white/5">
+                    <span class="text-[10px] text-zinc-500 flex-1">Type a message...</span>
+                    <div class="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     </div>
                 </div>
             </div>
@@ -237,6 +180,7 @@ class MobileSuite extends Component {
     }
 
     _renderSecondPhone() {
+        const { agentStats } = this.props;
         return `
             <div class="lg:col-span-4 flex order-3 lg:py-0 pt-12 pb-12 relative justify-center">
                 <!-- Glow Effect -->
@@ -244,7 +188,7 @@ class MobileSuite extends Component {
 
                 <!-- Phone Frame -->
                 <div class="debug-phone-mockup border-[1px] overflow-hidden bg-zinc-950 w-[330px] h-[660px] z-10 border-zinc-800 rounded-[3.5rem] ring-white/10 ring-1 relative shadow-[0_5.7px_8.6px_rgba(0,_0,_0,_0.07),_0_13.7px_10.9px_rgba(0,_0,_0,_0.099),_0_25.7px_20.5px_rgba(0,_0,_0,_0.123),_0_45.8px_36.6px_rgba(0,_0,_0,_0.147),_0_85.8px_68.5px_rgba(0,_0,_0,_0.176),_0_205px_163.4px_rgba(0,_0,_0,_0.246)]">
-                    
+
                     <!-- Dynamic Island -->
                     <div class="absolute top-3 left-1/2 -translate-x-1/2 h-[32px] w-[110px] bg-black rounded-full z-50 flex items-center justify-between px-3 transition-all duration-500 hover:w-[140px] group/island">
                         <div class="flex gap-2 h-full items-center opacity-0 group-hover/island:opacity-100 transition-opacity duration-300">
@@ -271,9 +215,9 @@ class MobileSuite extends Component {
 
                     <!-- App Content -->
                     <div class="flex flex-col z-10 bg-gradient-to-b from-zinc-900 to-black w-full h-full pt-16 pr-6 pl-6 relative">
-                        
+
                         <!-- App Header -->
-                        <div class="flex z-10 mb-8 relative items-center justify-between">
+                        <div class="flex z-10 mb-6 relative items-center justify-between">
                             <button class="flex hover:bg-white/10 text-white/70 bg-gradient-to-br from-white/10 to-white/0 w-8 h-8 rounded-full items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="m12 19-7-7 7-7"></path>
@@ -282,7 +226,7 @@ class MobileSuite extends Component {
                             </button>
                             <div class="flex items-center gap-2">
                                 <div class="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)] animate-pulse"></div>
-                                <span class="text-sm font-semibold text-white">Analytics</span>
+                                <span class="text-sm font-semibold text-white">Agent Dashboard</span>
                             </div>
                             <button class="flex text-white/70 bg-gradient-to-br from-white/10 to-white/0 w-8 h-8 rounded-full items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -293,24 +237,24 @@ class MobileSuite extends Component {
                             </button>
                         </div>
 
-                        <!-- Stats Overview -->
+                        <!-- Conversations Stat -->
                         <div class="text-center mb-4">
-                            <p class="text-[10px] font-semibold text-zinc-500 uppercase tracking-widest mb-2">Monthly Active</p>
-                            <h4 class="text-5xl font-medium text-white tracking-tighter font-geist">124.5K</h4>
+                            <p class="text-[10px] font-semibold text-zinc-500 uppercase tracking-widest mb-2">Conversations This Month</p>
+                            <h4 class="text-5xl font-medium text-white tracking-tighter font-geist">${agentStats.conversations}</h4>
                             <div class="flex gap-1.5 mt-2 items-center justify-center">
                                 <div class="flex items-center text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded text-[10px] font-semibold border border-purple-500/20">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="mr-1">
                                         <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
                                         <polyline points="16 7 22 7 22 13"></polyline>
                                     </svg>
-                                    +28.3%
+                                    ${agentStats.change}
                                 </div>
-                                <span class="text-xs text-zinc-500 font-medium">vs last month</span>
+                                <span class="text-xs text-zinc-500 font-medium">${agentStats.period}</span>
                             </div>
                         </div>
 
                         <!-- Mini Chart -->
-                        <div class="w-full h-32 mb-6 relative">
+                        <div class="w-full h-28 mb-4 relative">
                             <svg class="w-full h-full overflow-visible" viewBox="0 0 280 100" preserveAspectRatio="none">
                                 <defs>
                                     <linearGradient id="chartGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -330,45 +274,34 @@ class MobileSuite extends Component {
                                     <line x1="0" y1="4" x2="0" y2="65" stroke="#a855f7" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"></line>
                                 </g>
                             </svg>
-                            <div class="flex pt-2 pr-2 pl-2 justify-between">
-                                <button class="text-[9px] font-semibold text-zinc-600 hover:text-white">1H</button>
-                                <button class="text-[9px] font-semibold text-zinc-600 hover:text-white">1D</button>
-                                <button class="text-[9px] font-semibold text-purple-500 bg-purple-500/10 rounded px-2 py-0.5 border border-purple-500/20">1W</button>
-                                <button class="text-[9px] font-semibold text-zinc-600 hover:text-white">1M</button>
-                                <button class="text-[9px] font-semibold text-zinc-600 hover:text-white">1Y</button>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-3 gap-3 mb-6">
+                            <div class="bg-gradient-to-br from-white/10 to-white/0 rounded-2xl p-3">
+                                <span class="text-[10px] uppercase tracking-wider text-zinc-500 block mb-1">Resolved</span>
+                                <span class="text-sm font-semibold text-white font-geist">${agentStats.resolved}</span>
+                            </div>
+                            <div class="bg-gradient-to-br from-white/10 to-white/0 rounded-2xl p-3">
+                                <span class="text-[10px] uppercase tracking-wider text-zinc-500 block mb-1">Avg Reply</span>
+                                <span class="text-sm font-semibold text-white font-geist">${agentStats.avgReply}</span>
+                            </div>
+                            <div class="bg-gradient-to-br from-white/10 to-white/0 rounded-2xl p-3">
+                                <span class="text-[10px] uppercase tracking-wider text-zinc-500 block mb-1">Leads</span>
+                                <span class="text-sm font-semibold text-white font-geist">${agentStats.booked}</span>
                             </div>
                         </div>
 
-                        <!-- Quick Stats Grid -->
-                        <div class="grid grid-cols-3 gap-3 mt-4 mb-8">
-                            <div class="bg-gradient-to-br from-white/10 to-white/0 rounded-2xl p-3">
-                                <span class="text-[10px] uppercase tracking-wider text-zinc-500 block mb-1">Uptime</span>
-                                <span class="text-sm font-semibold text-white font-geist">99.99%</span>
-                            </div>
-                            <div class="bg-gradient-to-br from-white/10 to-white/0 rounded-2xl p-3">
-                                <span class="text-[10px] uppercase tracking-wider text-zinc-500 block mb-1">Latency</span>
-                                <span class="text-sm font-semibold text-white font-geist">14ms</span>
-                            </div>
-                            <div class="bg-gradient-to-br from-white/10 to-white/0 rounded-2xl p-3">
-                                <span class="text-[10px] uppercase tracking-wider text-zinc-500 block mb-1">Requests</span>
-                                <span class="text-sm font-semibold text-white font-geist">2.4M</span>
-                            </div>
-                        </div>
-
-                        <!-- Bottom Section -->
-                        <div class="flex-1 bg-zinc-900/60 rounded-t-[2rem] -mx-6 px-6 pt-6 pb-4 backdrop-blur-md border-t border-white/5">
-                            <div class="flex items-center justify-between mb-4">
-                                <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Recent Events</p>
-                            </div>
+                        <!-- Recent Activity -->
+                        <div class="flex-1 bg-zinc-900/60 rounded-t-[2rem] -mx-6 px-6 pt-5 pb-4 backdrop-blur-md border-t border-white/5">
+                            <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider mb-4">Recent Activity</p>
                             <div class="space-y-3">
                                 <div class="flex items-center gap-3 bg-gradient-to-br from-white/10 to-white/0 rounded-xl px-3 py-3">
                                     <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/20">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                     </div>
                                     <div class="flex flex-col">
-                                        <span class="text-xs font-semibold text-white">Deployment Success</span>
+                                        <span class="text-xs font-semibold text-white">Lead Captured</span>
                                         <span class="text-[10px] text-emerald-500 font-medium flex items-center gap-1">
                                             <span class="w-1 h-1 rounded-full bg-emerald-500"></span> 2 min ago
                                         </span>
@@ -376,14 +309,12 @@ class MobileSuite extends Component {
                                 </div>
                                 <div class="flex items-center gap-3 bg-white/[0.02] border border-white/5 rounded-xl px-3 py-3">
                                     <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/20">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5">
-                                            <path d="M12 2v20M2 12h20"></path>
-                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                                     </div>
                                     <div class="flex flex-col">
-                                        <span class="text-xs font-semibold text-white">New Node Added</span>
+                                        <span class="text-xs font-semibold text-white">Meeting Booked</span>
                                         <span class="text-[10px] text-blue-400 font-medium flex items-center gap-1">
-                                            <span class="w-1 h-1 rounded-full bg-blue-400"></span> 15 min ago
+                                            <span class="w-1 h-1 rounded-full bg-blue-400"></span> 8 min ago
                                         </span>
                                     </div>
                                 </div>
@@ -404,7 +335,7 @@ class MobileSuite extends Component {
                 <!-- Background Large Typography -->
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full select-none pointer-events-none z-0">
                     <h2 class="text-[12vw] leading-none font-bold text-white/[0.03] text-center whitespace-nowrap font-manrope tracking-tighter">
-                        MOBILE SUITE
+                        AI AGENT
                     </h2>
                 </div>
 

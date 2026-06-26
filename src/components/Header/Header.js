@@ -25,13 +25,14 @@ class Header extends Component {
         super(containerId, {
             brandName: 'DoubleHelix',
             navLinks: [
-                { label: 'Product', href: '#' },
+                { label: 'Services', href: '#' },
+                { label: 'Work', href: '#' },
                 { label: 'AI Receptionist', href: '#ai-receptionist' },
-                { label: 'Customers', href: '#' },
-                { label: 'Pricing', href: '#' }
+                { label: 'About', href: '#' },
+                { label: 'Contact', href: '#' }
             ],
             cta: {
-                label: 'Request Demo',
+                label: 'Start a Project',
                 href: '#'
             },
             ...props
@@ -107,7 +108,6 @@ class Header extends Component {
                     
                     <!-- Actions -->
                     <div class="flex items-center gap-4 shrink-0">
-                        <a href="#" class="hidden md:block text-xs font-medium text-gray-300 hover:text-white transition-colors font-sans">Sign in</a>
                         ${this._renderCTA()}
                     </div>
                 </nav>
