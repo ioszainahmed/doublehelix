@@ -109,6 +109,12 @@
     }
 }
 
+/* Voice waveform bar animation */
+@keyframes wave-bar {
+    0%, 100% { transform: scaleY(0.4); opacity: 0.5; }
+    50% { transform: scaleY(1); opacity: 1; }
+}
+
 /* Carousel Animation */
 @keyframes carousel {
     0%, 100% {

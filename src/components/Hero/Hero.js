@@ -26,7 +26,7 @@ class Hero extends Component {
                 interactive: ['your', 'app'],
                 static2: ['with', 'smart', 'infrastructure']
             },
-            subtitleMain: 'Engineering bold ideas into living systems.',
+            subtitleMain: 'From voice AI receptionists to full-stack apps — bold ideas, engineered into living systems.',
             subtitleSecondary: 'From solid-core architecture to unified systems that scale without limits, built all into a single cohesive stack.',
             ctaText: 'Start Building',
             trustedByText: 'Trusted by',

@@ -26,7 +26,7 @@ class Header extends Component {
             brandName: 'DoubleHelix',
             navLinks: [
                 { label: 'Product', href: '#' },
-                { label: 'Docs', href: '#' },
+                { label: 'AI Receptionist', href: '#ai-receptionist' },
                 { label: 'Customers', href: '#' },
                 { label: 'Pricing', href: '#' }
             ],

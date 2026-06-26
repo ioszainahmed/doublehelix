@@ -16,10 +16,10 @@ class MobileSuite extends Component {
     constructor(containerId, props = {}) {
         super(containerId, {
             sectionTitle: {
-                line1: 'Design',
-                line2: 'Develop',
-                line3: 'Test &',
-                highlight: 'Launch'
+                line1: 'Answer',
+                line2: 'Qualify',
+                line3: 'Book &',
+                highlight: 'Convert'
             },
             phoneData: {
                 balance: '$8,245.32',
