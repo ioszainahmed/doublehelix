@@ -108,9 +108,17 @@ class InfiniteLogoCarousel {
             });
         });
 
+        // Defer to rAF: on cached loads all images are already `complete` so
+        // the Promise resolves in a microtask — before Tailwind CDN's
+        // MutationObserver fires and injects CSS for w-20/w-36. Without this
+        // deferral, offsetWidth returns the images' unconstrained natural size,
+        // --scroll-width is set too large, and the loop cycles faster each
+        // time the page is loaded from cache.
         Promise.all(imagePromises).then(() => {
-            this._calculateScrollWidth();
-            track.classList.add('animate-infinite-scroll-precise');
+            requestAnimationFrame(() => {
+                this._calculateScrollWidth();
+                track.classList.add('animate-infinite-scroll-precise');
+            });
         });
 
         // Recalculate on resize to prevent jitter after viewport changes
