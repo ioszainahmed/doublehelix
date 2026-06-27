@@ -22,12 +22,12 @@ class Hero extends Component {
     constructor(containerId, props = {}) {
         super(containerId, {
             headline: {
-                static1: 'Scale',
-                interactive: ['your', 'app'],
-                static2: ['with', 'smart', 'infrastructure']
+                static1: 'Software',
+                interactive: ['that', 'thinks.'],
+                static2: ['Products', 'that', 'scale.']
             },
-            subtitleMain: 'From voice AI receptionists to full-stack apps — bold ideas, engineered into living systems.',
-            subtitleSecondary: 'From solid-core architecture to unified systems that scale without limits, built all into a single cohesive stack.',
+            subtitleMain: 'From AI agents to full-stack mobile apps — we design, build, and ship intelligent software your customers actually use.',
+            subtitleSecondary: 'One studio. Strategy, design, and engineering under one roof — no handoffs, no gaps.',
             ctaText: 'Start Building',
             trustedByText: 'Trusted by',
             ...props

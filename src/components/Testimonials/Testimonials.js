@@ -18,7 +18,7 @@ class Testimonials extends Component {
                 badge: 'Testimonials',
                 title: 'Proven results,',
                 titleHighlight: 'delivered',
-                subtitle: "See how businesses are scaling their mobile presence with DoubleHelix's unified app infrastructure."
+                subtitle: "See how founders and operators are shipping faster, scaling smarter, and building better products with DoubleHelix."
             },
             carouselItems: [
                 {

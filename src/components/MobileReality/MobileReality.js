@@ -26,9 +26,9 @@ class MobileReality extends Component {
                 highlight: 'Mobile',
                 suffix: 'Apps'
             },
-            subtitle: 'Users spend 90% of their smartphone time in native apps',
-            superscript: '[1]',
-            tagline: "It's time you met them there.",
+            subtitle: 'Users spend 90% of their smartphone time in native apps — and AI is now baked into every great one',
+            superscript: '',
+            tagline: "We build both.",
             ...props
         });
     }
