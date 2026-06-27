@@ -19,12 +19,12 @@ class IdeaToApp extends Component {
      */
     constructor(containerId, props = {}) {
         super(containerId, {
-            badge: '90 DAY TRANSFORMATION',
+            badge: 'FROM CONCEPT TO LAUNCH',
             headline: {
-                prefix: 'Idea to an App,',
+                prefix: 'Idea to Product,',
                 highlight: 'in 90 Days'
             },
-            subtitle: 'From concept to App Store. A proven process that transforms your vision into a polished, market-ready mobile application.',
+            subtitle: 'From napkin sketch to live product — whether that\'s a mobile app, an AI agent, or a full-stack system. We take it to market.',
             phases: [
                 {
                     number: '01',
@@ -51,7 +51,7 @@ class IdeaToApp extends Component {
                     description: 'Native code meets agile methodology. Weekly builds, continuous feedback, rapid iteration.',
                     icon: 'code',
                     color: 'blue',
-                    items: ['Native Development', 'API Integration', 'Real-time Features', 'Performance Tuning']
+                    items: ['Native Development', 'AI Integration', 'Real-time Features', 'Performance Tuning']
                 },
                 {
                     number: '04',

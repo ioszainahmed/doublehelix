@@ -126,7 +126,7 @@ class Features extends Component {
                         <span class="absolute -top-8 left-1/2 -translate-x-1/2 w-6 h-6 bg-zinc-800 rotate-45 border-r border-b border-white/10"></span>
                     </div>
                     <div class="absolute -bottom-3 -right-3 w-10 h-10 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center shadow-lg">
-                        <span class="text-orange-500 font-bold text-base font-manrope tracking-tighter">N</span>
+                        <span class="text-orange-500 font-bold text-base font-manrope tracking-tighter">D</span>
                     </div>
                 </div>
             </div>
@@ -194,21 +194,9 @@ class Features extends Component {
         `;
     }
 
-    onMount() {
-        // Initialize the API status card sub-component
-        if (typeof APIStatusCard !== 'undefined') {
-            this._apiStatusCard = new APIStatusCard('api-status-card');
-            this._apiStatusCard.mount();
-        }
-    }
+    onMount() {}
 
-    onUnmount() {
-        // Clean up sub-component
-        if (this._apiStatusCard) {
-            this._apiStatusCard.unmount();
-            this._apiStatusCard = null;
-        }
-    }
+    onUnmount() {}
 }
 
 // Export
